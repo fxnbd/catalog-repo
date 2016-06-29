@@ -1,0 +1,28 @@
+.catalog:
+  name: "Foxconn HDP"
+  version: 1.1-rancher2
+  description: |
+    (Experimental) Hortonworks Data Platform cluster.
+  minimum_rancher_version: v0.56.0
+  uuid: hdp-1
+  questions:
+    - variable: "node_count"
+      description: "Number of cluster nodes"
+      label: "Node Count:"
+      required: true
+      default: 2
+      type: "int"
+    - variable: "blueprint"
+      label: "Blueprint"
+      description: "Choose one blueprint"
+      default: multi-node-hdfs-yarn
+      type: enum   
+      options:
+        - multi-node-hdfs-yarn
+        - single-node-hdfs-yarn
+amb-agent:
+  scale: ${node_count}
+amb-server:
+  scale: 1
+provision:
+  scale: 1
