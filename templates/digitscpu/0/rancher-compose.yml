@@ -1,0 +1,4 @@
+.catalog:
+  name: "DIGIT latest (CPU only)"
+  version: digits-latest
+  description: "Deep Learning"
