@@ -1,0 +1,4 @@
+.catalog:
+  name: "DIGIT 4"
+  version: digits4
+  description: "Deep Learning"
