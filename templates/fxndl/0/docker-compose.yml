@@ -1,0 +1,11 @@
+fxndl:
+  image: fxndl:0.1
+  links:
+    - db:mysql
+  ports:
+    - ${public_port}:5000
+
+db:
+  image: mariadb
+  environment:
+    MYSQL_ROOT_PASSWORD: fxndl

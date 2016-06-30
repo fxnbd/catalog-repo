@@ -1,0 +1,15 @@
+.catalog:
+  name: "FOXCONN DEEP LEARNING"
+  version: "v0.1"
+  description: "FOXCONN DEEP LEARNING"
+  uuid: fxndl-0
+  minimum_rancher_version: v0.51.0
+  questions:    
+    - variable: public_port
+      description: "public port to access the fxndl site"
+      label: "Public Port"
+      required: true
+      default: "5000"
+      type: "int"
+  
+fxndl:
