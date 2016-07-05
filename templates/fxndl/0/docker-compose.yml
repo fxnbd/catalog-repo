@@ -9,3 +9,5 @@ db:
   image: mariadb
   environment:
     MYSQL_ROOT_PASSWORD: fxndl
+    MYSQL_USER: digits
+    MYSQL_PASSWORD: digits
