@@ -1,5 +1,5 @@
 fxndl:
-  image: fxndl:0.1
+  image: fxndl
   links:
     - db:mysql
     - jar:caffeonspark
