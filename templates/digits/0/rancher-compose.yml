@@ -1,0 +1,11 @@
+.catalog:
+  name: "DIGIT 3.3"
+  version: digits3
+  description: "Deep Learning"
+  questions:
+     - variable: "public_port"
+       label: "Public Port"
+       type: "int"
+       required: true
+       description: Public port to access the web site
+       default: 34448

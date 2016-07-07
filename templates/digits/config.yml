@@ -1,5 +1,5 @@
-name: DIGITS 4
+name: DIGITS
 description: |
-  Nvidia DIGITS 4
+  Nvidia DIGITS for Deep Learning Platform
 version: digits4
 category: Deep Learning
