@@ -29,4 +29,4 @@ db:
     MYSQL_PASSWORD: digits
   volume_driver: convoy-gluster
   volumes:
-    - mysql_db:/var/lib/mysql
+    - ${stack_name}_db:/var/lib/mysql
