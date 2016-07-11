@@ -1,0 +1,10 @@
+.catalog:
+  name: "Foxconn Consul DNS"
+  version: 1.0-consul2
+  description: |
+    Consul DNS service.
+  minimum_rancher_version: v0.56.0
+  uuid: consul-1
+consul:
+  scale: 1
+  retain_ip: true

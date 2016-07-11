@@ -1,0 +1,9 @@
+consul:
+  labels:
+    io.rancher.container.pull_image: always
+  image: sequenceiq/consul:v0.5.0-v6
+  command:
+  - -server
+  - -bootstrap
+  hostname: consul
+  domainname: service.consul

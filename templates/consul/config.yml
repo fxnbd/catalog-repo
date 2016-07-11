@@ -1,0 +1,5 @@
+name: Foxconn Consul DNS
+description: |
+  An Consul DNS service for Foxconn HDP
+version: 1.0-rancher1
+category: Big Data
