@@ -1,0 +1,42 @@
+.catalog:
+  name: "FOXCONN DEEP LEARNING"
+  version: "v0.1"
+  description: "FOXCONN DEEP LEARNING"
+  uuid: fxndl-0
+  minimum_rancher_version: v0.51.0
+  questions:
+    - variable: digits_port
+      description: "public port to access the fxndl site"
+      label: "Digits Public Port"
+      required: true
+      default: "5000"
+      type: "int"
+    - variable: "spark_host"
+      type: string
+      required: true
+      label: "Spark Cluster Host"
+      description: "Address of Host for Spark Cluster"
+    - variable: "spark_account"
+      type: string
+      required: true
+      label: "Spark Account"
+      description: "User account of Host for Spark Cluster"
+    - variable: ssh_port
+      description: "public SSH port of Host for Spark Cluster"
+      label: "Public SSH Port"
+      required: true
+      default: "22"
+      type: "int"
+    - variable: "spark_password"
+      type: string
+      required: true
+      label: "Spark Password"
+      description: "Address of Host for Spark Cluster"
+    - variable: jar_port
+      description: "public port to access the Caffe on Spark site"
+      label: "Caffe on Spark Public Port"
+      required: true
+      default: "80"
+      type: "int"
+  
+fxndl:
