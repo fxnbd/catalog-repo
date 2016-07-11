@@ -28,7 +28,7 @@
       default: "22"
       type: "int"
     - variable: "spark_password"
-      type: string
+      type: password
       required: true
       label: "Spark Password"
       description: "Address of Host for Spark Cluster"

@@ -11,6 +11,8 @@ fxndl:
     SPARK_SSH_PORT: ${ssh_port}
     SPARK_USER: ${spark_account}
     SPARK_PASSWORD: ${spark_password}
+  labels:
+    io.rancher.container.pull_image: always
 
 jar:
   image: markyeh/caffe-spark
@@ -25,3 +27,6 @@ db:
     MYSQL_ROOT_PASSWORD: fxndl
     MYSQL_USER: digits
     MYSQL_PASSWORD: digits
+  volume_driver: convoy-gluster
+  volmes:
+    - mysql_db:/var/lib/mysql
