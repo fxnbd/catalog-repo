@@ -1,6 +1,6 @@
 .catalog:
   name: "Foxconn Consul DNS"
-  version: 1.0-consul2
+  version: 1.0-rancher1
   description: |
     Consul DNS service.
   minimum_rancher_version: v0.56.0
