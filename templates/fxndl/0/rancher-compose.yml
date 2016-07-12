@@ -38,5 +38,10 @@
       required: true
       default: "80"
       type: "int"
+    - variable: "volume_name"
+      type: string
+      required: true
+      label: "The volume name on host"
+      description: "The volume name on host"
   
 fxndl:
