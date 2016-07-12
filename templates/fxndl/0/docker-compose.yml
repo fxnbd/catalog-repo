@@ -27,6 +27,6 @@ db:
     MYSQL_ROOT_PASSWORD: fxndl
     MYSQL_USER: digits
     MYSQL_PASSWORD: digits
-  volume_driver: convoy-gluster
+  volume_driver: ${volume_driver}
   volumes:
     - ${volume_name}_db:/var/lib/mysql
