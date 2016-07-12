@@ -15,7 +15,7 @@ fxndl:
     io.rancher.container.pull_image: always
   volume_driver: ${volume_driver}
   volumes:
-    - ${volume_name}_digits:/var/lib/mysql
+    - ${volume_name}_digits:/opt/DIGITS/volume
 
 jar:
   image: markyeh/caffe-spark
