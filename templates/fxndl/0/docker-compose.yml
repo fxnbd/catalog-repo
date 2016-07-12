@@ -13,6 +13,9 @@ fxndl:
     SPARK_PASSWORD: ${spark_password}
   labels:
     io.rancher.container.pull_image: always
+  volume_driver: ${volume_driver}
+  volumes:
+    - ${volume_name}_digits:/var/lib/mysql
 
 jar:
   image: markyeh/caffe-spark
