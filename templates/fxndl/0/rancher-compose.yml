@@ -38,6 +38,11 @@
       required: true
       default: "80"
       type: "int"
+    - variable: "volume_driver"
+      label: "Volume Driver"
+      type: string
+      required: true
+      description: "volume driver"
     - variable: "volume_name"
       type: string
       required: true
