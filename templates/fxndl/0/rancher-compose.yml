@@ -51,6 +51,7 @@
 
 fxndl:
   health_check:
+      initializing_timeout: 120000
       port: 5000
       interval: 5000
       unhealthy_threshold: 2
