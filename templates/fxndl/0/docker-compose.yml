@@ -1,4 +1,6 @@
 fxndl:
+  labels:
+    io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
   image: 192.168.128.28:5000/fxndl
   links:
     - db:mysql
