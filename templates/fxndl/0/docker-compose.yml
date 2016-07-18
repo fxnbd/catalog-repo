@@ -4,8 +4,6 @@ fxndl:
     - db:mysql
     - jar:caffeonspark
   privileged: true
-  ports:
-    - ${digits_port}:5000
   environment:
     SPARK_HOST: ${spark_host}
     SPARK_SSH_PORT: ${ssh_port}
@@ -33,3 +31,10 @@ db:
   volume_driver: ${volume_driver}
   volumes:
     - ${volume_name}_db:/var/lib/mysql
+
+fxndl-lb:
+  ports:
+    - ${digits_port}:5000
+  image: rancher/load-balancer-service
+  links:
+  - fxndl:fxndl

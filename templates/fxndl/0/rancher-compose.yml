@@ -50,6 +50,7 @@
       description: "The volume name on host"
 
 fxndl:
+  scale: 3
   health_check:
       initializing_timeout: 120000
       port: 5000
@@ -74,3 +75,13 @@ db:
       strategy: recreate
       response_timeout: 5000
       healthy_threshold: 1
+fxndl-lb:
+  scale: 1
+  load_balancer_config: {}
+  health_check:
+    port: 42
+    interval: 5000
+    unhealthy_threshold: 2
+    strategy: recreate
+    healthy_threshold: 1
+    response_timeout: 5000
