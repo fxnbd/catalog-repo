@@ -20,8 +20,6 @@ fxndl:
 jar:
   image: markyeh/caffe-spark
   privileged: true
-  ports:
-    - ${jar_port}:80
 
 db:
   image: mariadb
