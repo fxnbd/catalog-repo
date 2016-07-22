@@ -1,0 +1,22 @@
+.catalog:
+  name: "FOXCONN Face Recognition"
+  version: "v0.1"
+  description: "FOXCONN Face Recognition"
+  uuid: fxndl-iva
+  minimum_rancher_version: v0.51.0
+  questions:
+    - variable: stream_addr
+      description: "stream source address for face recognition"
+      label: "Stream Source Address"
+      required: true
+      type: "str"
+  
+fxndl-avi:
+  health_check:
+      initializing_timeout: 120000
+      port: 8000
+      interval: 5000
+      unhealthy_threshold: 2
+      strategy: recreate
+      response_timeout: 5000
+      healthy_threshold: 1
