@@ -9,7 +9,7 @@
       description: "stream source address for face recognition"
       label: "Stream Source Address"
       required: true
-      type: "str"
+      type: string
   
 fxndl-avi:
   health_check:
