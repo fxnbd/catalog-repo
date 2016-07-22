@@ -3,5 +3,8 @@ fxndl:
   privileged: true
   environment:
     STREAM_ADDR: ${stream_addr}
+  ports:
+    - ${web_port}:8000
+    - ${slot_port}:11843
   labels:
     io.rancher.container.pull_image: always

@@ -10,6 +10,18 @@
       label: "Stream Source Address"
       required: true
       type: string
+    - variable: web_port
+      description: "public port to access the fxndl-iva site"
+      label: "Web Public Port"
+      required: true
+      default: "8000"
+      type: "int"
+    - variable: slot_port
+      description: "public slot port to access the fxndl-iva site"
+      label: "Web Slot Public Port"
+      required: true
+      default: "11843"
+      type: "int"
   
 fxndl-avi:
   health_check:
