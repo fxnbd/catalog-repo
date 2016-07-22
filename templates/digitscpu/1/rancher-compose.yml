@@ -26,4 +26,4 @@
        type: "string"
        required: true
        description: The mount path of your data volume
-       default: "/root"
+       default: "/datasets"
