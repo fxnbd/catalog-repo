@@ -13,6 +13,8 @@ fxndl:
     SPARK_PASSWORD: ${spark_password}
   labels:
     io.rancher.container.pull_image: always
+    io.rancher.container.create_agent: true
+    io.rancher.container.agent.role: environment
   volume_driver: ${volume_driver}
   volumes:
     - ${volume_name}_digits:/opt/DIGITS/volume
