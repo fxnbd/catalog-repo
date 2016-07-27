@@ -1,5 +1,5 @@
-name: FOXCONN Face Recognition
+name: FOXCONN FR
 description: |
-  FOXCONN Face Recognition
+  Face Recognition
 version: v0.1
-category: deep learning
+category: IVA
