@@ -1,0 +1,5 @@
+neon:
+  image: kaixhin/neon
+  volumes:
+    - ${volume_name}:${volume_mount_path}
+  volume_driver: ${VOLUME_DRIVER}

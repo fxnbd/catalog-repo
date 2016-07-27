@@ -1,6 +1,6 @@
 .catalog:
-  name: "DIGIT 4.0"
-  version: DIGITS4 (GPU)
+  name: "DIGIT 3.3"
+  version: 3.3 (GPU)
   description: "Deep Learning"
   questions:
      - variable: "public_port"
@@ -20,7 +20,7 @@
        type: "string"
        required: true
        description: The volume name to store your datasets
-       default: "digits_volume"
+       default: "digits3_volume"
      - variable: "volume_mount_path"
        label: "Volume Mount Path"
        type: "string"

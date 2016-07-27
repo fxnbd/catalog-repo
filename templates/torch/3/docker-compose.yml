@@ -1,7 +1,7 @@
-digits3:
-  image: nvidia/digits:3.3
+torch:
+  image: kaixhin/cuda-torch:7.0
   ports:
-    - ${public_port}:34448/tcp
+    - ${public_port}:8888/tcp
   privileged: true
   volumes:
     - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro

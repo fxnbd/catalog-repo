@@ -1,6 +1,6 @@
 .catalog:
   name: "DIGITS latest (CPU only)"
-  version: DIGITS-latest (CPU only)
+  version: Latest (CPU only)
   description: "Deep Learning"
   questions:
      - variable: "public_port"
@@ -20,7 +20,7 @@
        type: "string"
        required: true
        description: The volume name to store your datasets
-       default: "digits_volume"
+       default: "digits_latest_volume"
      - variable: "volume_mount_path"
        label: "Volume Mount Path"
        type: "string"

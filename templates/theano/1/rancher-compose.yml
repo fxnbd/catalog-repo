@@ -1,14 +1,8 @@
 .catalog:
-  name: "DIGITS Latest (GPU)"
-  version: Latest (GPU)
+  name: "Theano with CUDA"
+  version: CUDA Latest
   description: "Deep Learning"
   questions:
-     - variable: "public_port"
-       label: "Public Port"
-       type: "int"
-       required: true
-       description: Public port to access the web site
-       default: 34448
      - variable: "VOLUME_DRIVER"
        label: "Volume driver"
        type: "string"
@@ -20,7 +14,7 @@
        type: "string"
        required: true
        description: The volume name to store your datasets
-       default: "digits_volume"
+       default: "theano_volume"
      - variable: "volume_mount_path"
        label: "Volume Mount Path"
        type: "string"

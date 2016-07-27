@@ -1,8 +1,5 @@
-digits3:
-  image: nvidia/digits:3.3
-  ports:
-    - ${public_port}:34448/tcp
-  privileged: true
+caffe:
+  image: kaixhin/cuda-caffe:6.5
   volumes:
     - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
     - ${volume_name}:${volume_mount_path}
