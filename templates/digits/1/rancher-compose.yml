@@ -1,6 +1,6 @@
 .catalog:
-  name: "DIGIT 4.0"
-  version: digits4
+  name: "DIGIT 3.3"
+  version: DIGITS3 (GPU)
   description: "Deep Learning"
   questions:
      - variable: "public_port"

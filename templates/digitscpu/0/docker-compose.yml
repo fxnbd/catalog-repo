@@ -1,5 +1,0 @@
-digitscpu:
-  image: kaixhin/digits
-  ports:
-    - ${public_port}:5000/tcp
-  privileged: true

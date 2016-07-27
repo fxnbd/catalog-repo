@@ -1,6 +1,6 @@
 .catalog:
-  name: "DIGIT 3.3"
-  version: digits3
+  name: "DIGITS latest (CPU only)"
+  version: DIGITS-latest (CPU only)
   description: "Deep Learning"
   questions:
      - variable: "public_port"
@@ -8,7 +8,7 @@
        type: "int"
        required: true
        description: Public port to access the web site
-       default: 34448
+       default: 34458
      - variable: "VOLUME_DRIVER"
        label: "Volume driver"
        type: "string"

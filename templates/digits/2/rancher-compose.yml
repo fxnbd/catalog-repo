@@ -1,6 +1,6 @@
 .catalog:
-  name: "DIGITS latest (CPU only) + Convoy-Gluster"
-  version: Convoy-Volume
+  name: "DIGIT 4.0"
+  version: DIGITS4 (GPU)
   description: "Deep Learning"
   questions:
      - variable: "public_port"
@@ -8,7 +8,7 @@
        type: "int"
        required: true
        description: Public port to access the web site
-       default: 34458
+       default: 34448
      - variable: "VOLUME_DRIVER"
        label: "Volume driver"
        type: "string"
