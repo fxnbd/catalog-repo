@@ -1,5 +1,5 @@
 tensorflow:
-  image: tensorflow/tensorflow:gpu
+  image: tensorflow/tensorflow:latest-gpu
   ports:
     - ${public_port}:8888/tcp
   privileged: true
