@@ -1,6 +1,6 @@
 .catalog:
-  name: "DIGITS 4.0 (CPU)"
-  version: DIGITS 4.0 (CPU)
+  name: "DIGITS 4.0 (CPU only)"
+  version: DIGITS 4.0 (CPU only)
   description: "Deep Learning"
   questions:
      - variable: "public_port"
