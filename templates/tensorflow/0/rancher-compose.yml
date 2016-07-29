@@ -3,7 +3,7 @@
   version: Latest (CPU only)
   description: "Deep Learning"
   questions:
-     - variable: "public_port"
+     - variable: "PUBLIC_PORT"
        label: "Public Port"
        type: "int"
        required: true
@@ -15,13 +15,13 @@
        required: true
        description: Driver that is providing volume
        default: "convoy-gluster"
-     - variable: "volume_name"
+     - variable: "VOLUME_NAME"
        label: "Volume Name"
        type: "string"
        required: true
        description: The volume name to store your datasets
        default: "tensorflow_volume"
-     - variable: "volume_mount_path"
+     - variable: "VOLUME_MOUNT_PATH"
        label: "Volume Mount Path"
        type: "string"
        required: true

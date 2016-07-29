@@ -1,9 +1,18 @@
 tensorflow:
-  image: tensorflow/tensorflow:latest-gpu
   ports:
-    - ${public_port}:8888/tcp
+  - ${PUBLIC_PORT}:8888/tcp
+  labels:
+    io.rancher.container.pull_image: always
+  tty: true
+  entrypoint:
+  - /bin/sh
+  - -c
+  - jupyter notebook --port=8888 --ip=0.0.0.0
+  image: davidchiu/tensorflow09:gpu-jupyter
   privileged: true
   volumes:
-    - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
-    - ${volume_name}:${volume_mount_path}
+  - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
+  - ${VOLUME_NAME}:${VOLUME_MOUNT_PATH}
+  working_dir: /notebooks
+  stdin_open: true
   volume_driver: ${VOLUME_DRIVER}
