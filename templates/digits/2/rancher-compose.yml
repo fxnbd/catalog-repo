@@ -1,6 +1,6 @@
 .catalog:
-  name: "DIGIT 3.3"
-  version: 3.3 (GPU)
+  name: "GPU DIGITS 3.3"
+  version: GPU DIGITS 3.3
   description: "Deep Learning"
   questions:
      - variable: "public_port"
@@ -27,3 +27,14 @@
        required: true
        description: The mount path of your data volume
        default: "/datasets"
+       
+digits3:
+  health_check:
+      initializing_timeout: 120000
+      port: 5000
+      interval: 5000
+      unhealthy_threshold: 2
+      strategy: recreate
+      response_timeout: 5000
+      healthy_threshold: 1
+      

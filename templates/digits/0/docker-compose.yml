@@ -1,8 +1,10 @@
-digitscpu:
-  image: kaixhin/digits
+digitscpu3:
+  image: casperc2100/digits:cpu-digits3
   ports:
     - ${public_port}:5000/tcp
   privileged: true
+  labels:
+    io.rancher.container.pull_image: always
   volumes:
     - ${volume_name}:${volume_mount_path}
   volume_driver: ${VOLUME_DRIVER}

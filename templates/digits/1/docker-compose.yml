@@ -1,9 +1,10 @@
-digits:
-  image: nvidia/digits:latest
+digitscpu4:
+  image: casperc2100/digits:cpu-digits4
   ports:
-    - ${public_port}:34448/tcp
+    - ${public_port}:5000/tcp
   privileged: true
+  labels:
+    io.rancher.container.pull_image: always
   volumes:
-    - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
     - ${volume_name}:${volume_mount_path}
   volume_driver: ${VOLUME_DRIVER}
