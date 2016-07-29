@@ -1,5 +1,5 @@
-digitscpu3:
-  image: casperc2100/digits:cpu-digits3
+digitscpu4:
+  image: casperc2100/digits:cpu-digits4
   ports:
     - ${public_port}:5000/tcp
   privileged: true

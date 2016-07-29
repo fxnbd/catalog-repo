@@ -1,6 +1,6 @@
 .catalog:
-  name: "CPU DIGITS 3"
-  version: CPU DIGITS 3
+  name: "CPU DIGITS 4.0"
+  version: CPU DIGITS 4.0
   description: "Deep Learning"
   questions:
      - variable: "public_port"
@@ -8,7 +8,7 @@
        type: "int"
        required: true
        description: Public port to access the web site
-       default: 34457
+       default: 34458
      - variable: "VOLUME_DRIVER"
        label: "Volume driver"
        type: "string"
@@ -20,7 +20,7 @@
        type: "string"
        required: true
        description: The volume name to store your datasets
-       default: "digits3cpu_volume"
+       default: "digits4cpu_volume"
      - variable: "volume_mount_path"
        label: "Volume Mount Path"
        type: "string"
@@ -28,7 +28,7 @@
        description: The mount path of your data volume
        default: "/datasets"
        
-digitscpu3:
+digitscpu4:
   health_check:
       initializing_timeout: 120000
       port: 5000
