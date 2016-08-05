@@ -23,7 +23,7 @@
       default: "11843"
       type: "int"
   
-fxndl-avi:
+fxnfr:
   health_check:
       initializing_timeout: 120000
       port: 8000

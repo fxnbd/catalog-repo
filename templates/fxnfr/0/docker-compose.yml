@@ -1,4 +1,4 @@
-fxndl:
+fxnfr:
   image: 192.168.128.28:5000/fxnfr
   privileged: true
   environment:
