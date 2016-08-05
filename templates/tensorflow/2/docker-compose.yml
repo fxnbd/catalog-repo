@@ -1,0 +1,12 @@
+mnist-classification:
+  ports:
+  - {PUBLIC_PORT}:5000/tcp
+  labels:
+    io.rancher.container.pull_image: always
+  tty: true
+  entrypoint:
+  - /bin/sh
+  - -c
+  - cd /web_mnist_demo && python app.py
+  image: davidchiu/tensorflow09:cpu-mnist
+  stdin_open: true
