@@ -1,6 +1,6 @@
 mnist-classification:
   ports:
-  - {PUBLIC_PORT}:5000/tcp
+  - ${PUBLIC_PORT}:5000/tcp
   labels:
     io.rancher.container.pull_image: always
   tty: true
