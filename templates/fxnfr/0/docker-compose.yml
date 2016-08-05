@@ -1,5 +1,5 @@
 fxndl:
-  image: 192.168.128.28:5000/fxndl-iva
+  image: 192.168.128.28:5000/fxnfr
   privileged: true
   environment:
     STREAM_ADDR: ${stream_addr}
