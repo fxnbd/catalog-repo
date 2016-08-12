@@ -1,6 +1,6 @@
 .catalog:
-  name: "DIGITS 4.0 (CPU by NVIDIA)"
-  version: DIGITS 4.0 (CPU by NVDIA)
+  name: "DIGITS 4.0 (GPU)"
+  version: DIGITS 4.0 (GPU)
   description: "Deep Learning"
   questions:
      - variable: "public_port"
@@ -8,7 +8,7 @@
        type: "int"
        required: true
        description: Public port to access the web site
-       default: 34449
+       default: 34448
      - variable: "VOLUME_DRIVER"
        label: "Volume driver"
        type: "string"
@@ -20,7 +20,7 @@
        type: "string"
        required: true
        description: The volume name to store your datasets
-       default: "digits4-cpu2"
+       default: "digits4-gpu"
      - variable: "volume_mount_path"
        label: "Volume Mount Path"
        type: "string"
