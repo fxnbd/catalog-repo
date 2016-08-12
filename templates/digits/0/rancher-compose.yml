@@ -14,13 +14,13 @@
        type: "string"
        required: true
        description: Driver that is providing volume
-       default: "convoy-gluster"
+       default: "convoy-nfs"
      - variable: "volume_name"
        label: "Volume Name"
        type: "string"
        required: true
        description: The volume name to store your datasets
-       default: "digits4cpu_volume"
+       default: "digits4-cpu"
      - variable: "volume_mount_path"
        label: "Volume Mount Path"
        type: "string"

@@ -14,7 +14,7 @@
        type: "string"
        required: true
        description: Driver that is providing volume
-       default: "convoy-gluster"
+       default: "convoy-nfs"
      - variable: "VOLUME_NAME"
        label: "Volume Name"
        type: "string"

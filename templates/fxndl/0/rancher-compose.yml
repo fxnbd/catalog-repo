@@ -36,7 +36,7 @@
       label: "Volume Driver"
       type: string
       required: true
-      default: "convoy-gluster"
+      default: "convoy-nfs"
       description: "volume driver"
     - variable: "volume_name"
       type: string
