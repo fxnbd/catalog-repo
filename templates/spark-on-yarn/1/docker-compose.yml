@@ -1,0 +1,25 @@
+spark-on-yarn:
+  net: "host"
+  labels:
+    io.rancher.scheduler.global: 'true'
+  image: markyeh/spark-on-yarn:v0.0.0
+  volumes:
+  - /data/hdfs:/home/hadoop/hadoop/tmp
+  - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
+  privileged: true
+  
+spark-auto-tool:
+  environment:
+    RANCHER_UUID: spark-on-yarn-v001
+    FXN_HADOOP_SSH_PORT : ${FXN_HADOOP_SSH_PORT}
+    FXN_YARN_NM_CPU_VCORES: ${FXN_YARN_NM_CPU_VCORES}
+    FXN_YARN_NM_MEMORY_MB: ${FXN_YARN_NM_MEMORY_MB}
+    FXN_YARN_SCH_MIN_MB: ${FXN_YARN_SCH_MIN_MB}
+    FXN_YARN_SCH_MAX_MB: ${FXN_YARN_SCH_MAX_MB}
+    FXN_HDFS_REPLICA: ${FXN_HDFS_REPLICA}
+  labels:
+    io.rancher.container.create_agent: 'true'
+    io.rancher.container.agent.role: 'environment'
+  net: "host"
+  image: markyeh/spark-auto-tool:v0.0.1
+  privileged: true

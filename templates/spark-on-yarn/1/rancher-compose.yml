@@ -1,0 +1,45 @@
+.catalog:
+  name: Spark on YARN
+  version: v0.0.1
+  description: |
+    Spark cluster including YARN and HDFS.
+  uuid: spark-on-yarn-v001
+  questions:
+    - variable: "FXN_HADOOP_SSH_PORT"
+      label: "Hadoop default SSH port"
+      description: "Choice an unused port for SSH connection"
+      type: "int"
+      default: "222"
+      required: true
+    - variable: "FXN_YARN_NM_CPU_VCORES"
+      label: "Yarn Nodemanager CPU vcores"
+      description: "yarn.nodemanager.resource.cpu-vcores value"
+      type: "int"
+      default: "16"
+      required: true
+    - variable: "FXN_YARN_NM_MEMORY_MB"
+      label: "Yarn Nodemanager Memory Value (MB)"
+      description: "yarn.nodemanager.resource.memory-mb value"
+      type: "int"
+      default: "40000"
+      required: true
+    - variable: "FXN_YARN_SCH_MIN_MB"
+      label: "Yarn scheduler minimum allocation memory (MB)"
+      description: "yarn.scheduler.minimum-allocation-mb value"
+      type: "int"
+      default: "512"
+      required: true
+    - variable: "FXN_YARN_SCH_MAX_MB"
+      label: "Yarn scheduler maximum allocation memory (MB)"
+      description: "yarn.scheduler.maximum-allocation-mb value"
+      type: "int"
+      default: "40000"
+      required: true
+    - variable: "FXN_HDFS_REPLICA"
+      label: "Default number of HDFS replicas"
+      description: "Default DFS Replica Count"
+      type: "int"
+      default: "3"
+      required: true
+spark-on-yarn:
+  scale: 1 
