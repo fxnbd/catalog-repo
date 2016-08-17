@@ -3,19 +3,19 @@
   version: Latest (ImageNet)
   description: "Deep Learning Serving"
   questions:
-    - variable: "PUBLIC_PORT"
+     - variable: "PUBLIC_PORT"
        label: "Public Port"
        type: "int"
        required: true
        description: Public port to access the web site
        default: 9000
-    - variable: "VOLUME_DRIVER"
+     - variable: "VOLUME_DRIVER"
        label: "Volume driver"
        type: "string"
        required: true
        description: Driver that is providing volume
        default: "convoy-nfs"
-    - variable: "VOLUME_NAME"
+     - variable: "VOLUME_NAME"
        label: "Volume Name"
        type: "string"
        required: true

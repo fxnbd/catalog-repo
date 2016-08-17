@@ -14,7 +14,7 @@ tf-jupyter:
   volumes:
   - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
   - ${VOLUME_NAME}:${VOLUME_MOUNT_PATH}
-  working_dir: /notebooks/
+  working_dir: /notebooks
   stdin_open: true
   volume_driver: ${VOLUME_DRIVER}
 tf-worker:
@@ -28,7 +28,7 @@ tf-worker:
   volumes:
   - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
   - ${VOLUME_NAME}:${VOLUME_MOUNT_PATH}
-  working_dir: /notebooks/
+  working_dir: /notebooks
   stdin_open: true
   volume_driver: ${VOLUME_DRIVER}
 tf-ps:
@@ -41,6 +41,6 @@ tf-ps:
   volumes:
   - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
   - ${VOLUME_NAME}:${VOLUME_MOUNT_PATH}
-  working_dir: /notebooks/
+  working_dir: /notebooks
   stdin_open: true
   volume_driver: ${VOLUME_DRIVER}

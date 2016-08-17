@@ -1,20 +1,20 @@
 .catalog:
-  name: "Distributed Tensorflow with CUDA"
+  name: "Tensorflow latest (GPU Distributed)"
   version: Latest (Distributed)
   description: "Deep Learning"
   questions:
-    - variable: "WORKER_NUM"
-      label: "worker number"
-      type: "int"
-      default: 2
-      required: true
-      description: worker number setting
-    - variable: "PUBLIC_PORT"
+     - variable: "WORKER_NUM"
+       label: "worker number"
+       type: "int"
+       default: 2
+       required: true
+       description: worker number setting
+     - variable: "PUBLIC_PORT"
        label: "Public Port"
-      type: "int"
-      default: 8888
-      required: false
-      description: jupyter-notebooks public port
+       type: "int"
+       default: 8888
+       required: false
+       description: jupyter-notebooks public port
      - variable: "VOLUME_DRIVER"
        label: "Volume driver"
        type: "string"

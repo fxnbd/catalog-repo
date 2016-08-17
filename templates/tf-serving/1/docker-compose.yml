@@ -4,10 +4,10 @@ inference-client:
   labels:
     io.rancher.container.pull_image: always
   tty: true
-  hostname: tf-client
+  hostname: interence-client
   image: davidchiu/tensorflow09:cpu-web
   links:
-  - tf-inference:inference
+  - inference-server:inference
   privileged: true
   volumes:
   - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
@@ -16,7 +16,7 @@ inference-client:
   volume_driver: ${VOLUME_DRIVER}
 inference-server:
   tty: true
-  hostname: tf-server
+  hostname: inference-server
   image: davidchiu/tensorflow09:gpu-serving
   privileged: true
   volumes:
