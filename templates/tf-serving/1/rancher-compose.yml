@@ -1,0 +1,33 @@
+.catalog:
+  name: ImageNet Classification
+  version: ImageNet
+  description: "Deep Learning Serving"
+  questions:
+    - variable: "PUBLIC_PORT"
+       label: "Public Port"
+       type: "int"
+       required: true
+       description: Public port to access the web site
+       default: 9000
+    - variable: "VOLUME_DRIVER"
+       label: "Volume driver"
+       type: "string"
+       required: true
+       description: Driver that is providing volume
+       default: "convoy-nfs"
+    - variable: "VOLUME_NAME"
+       label: "Volume Name"
+       type: "string"
+       required: true
+       description: The volume name to store your datasets
+       default: "tensorflow_volume_gpu"
+     - variable: "VOLUME_MOUNT_PATH"
+       label: "Volume Mount Path"
+       type: "string"
+       required: true
+       description: The mount path of your data volume
+       default: "/datasets"
+inference-client:
+  scale: 1
+inference-server:
+  scale: 1

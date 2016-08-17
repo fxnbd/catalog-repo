@@ -1,0 +1,26 @@
+inference-client:
+  ports:
+  - ${PUBLIC_PORT}:5000/tcp
+  labels:
+    io.rancher.container.pull_image: always
+  tty: true
+  hostname: tf-client
+  image: davidchiu/tensorflow09:cpu-web
+  links:
+  - tf-inference:inference
+  privileged: true
+  volumes:
+  - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
+  - ${VOLUME_NAME}:${VOLUME_MOUNT_PATH}
+  stdin_open: true
+  volume_driver: ${VOLUME_DRIVER}
+inference-server:
+  tty: true
+  hostname: tf-server
+  image: davidchiu/tensorflow09:gpu-serving
+  privileged: true
+  volumes:
+  - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
+  - ${VOLUME_NAME}:${VOLUME_MOUNT_PATH}
+  stdin_open: true
+  volume_driver: ${VOLUME_DRIVER}
