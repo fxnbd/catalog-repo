@@ -1,6 +1,6 @@
 .catalog:
   name: "Mnist Classification"
-  version: Mnist
+  version: Latest (Mnist)
   description: "Deep Learning"
   questions:
      - variable: "PUBLIC_PORT"

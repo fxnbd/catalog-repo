@@ -1,6 +1,6 @@
 .catalog:
   name: "ImageNet Classification"
-  version: ImageNet
+  version: Latest (ImageNet)
   description: "Deep Learning Serving"
   questions:
     - variable: "PUBLIC_PORT"

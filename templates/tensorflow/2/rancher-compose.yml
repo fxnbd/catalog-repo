@@ -1,6 +1,6 @@
 .catalog:
   name: "Distributed Tensorflow with CUDA"
-  version: Distributed (GPU)
+  version: Latest (Distributed)
   description: "Deep Learning"
   questions:
     - variable: "WORKER_NUM"
