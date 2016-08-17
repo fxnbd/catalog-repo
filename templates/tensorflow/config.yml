@@ -1,4 +1,4 @@
-name: Tensorflow
+name: FXN-Tensorflow
 description: |
   Deep Learning Framework
 version: Latest (GPU)
