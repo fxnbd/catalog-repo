@@ -1,0 +1,40 @@
+.catalog:
+  name: "DIGITS 4.0 (GPU by NVIDIA)"
+  version: DIGITS 4.0 (GPU by NVIDIA)
+  description: "Deep Learning"
+  questions:
+     - variable: "public_port"
+       label: "Public Port"
+       type: "int"
+       required: true
+       description: Public port to access the web site
+       default: 34448
+     - variable: "VOLUME_DRIVER"
+       label: "Volume driver"
+       type: "string"
+       required: true
+       description: Driver that is providing volume
+       default: "convoy-nfs"
+     - variable: "volume_name"
+       label: "Volume Name"
+       type: "string"
+       required: true
+       description: The volume name to store your datasets
+       default: "digits4-gpu"
+     - variable: "volume_mount_path"
+       label: "Volume Mount Path"
+       type: "string"
+       required: true
+       description: The mount path of your data volume
+       default: "/datasets"
+       
+digits4:
+  health_check:
+      initializing_timeout: 120000
+      port: 5000
+      interval: 5000
+      unhealthy_threshold: 2
+      strategy: recreate
+      response_timeout: 5000
+      healthy_threshold: 1
+      
