@@ -10,11 +10,17 @@
        required: true
        description: worker number setting
      - variable: "PUBLIC_PORT"
-       label: "Public Port"
+       label: "Jupyter Public Port"
        type: "int"
        default: 8888
        required: false
        description: jupyter-notebooks public port
+     - variable: "TENSORBOARD_PUBLIC_PORT"
+       label: "Tensorboard Public Port"
+       type: "int"
+       default: 6006
+       required: false
+       description: tensorboard public port
      - variable: "VOLUME_DRIVER"
        label: "Volume driver"
        type: "string"
@@ -33,6 +39,12 @@
        required: true
        description: The mount path of your data volume
        default: "/datasets"
+     - variable: "TENSORBOARD_PATH"
+       label: "Tensorboard Work Path"
+       type: "string"
+       required: true
+       description: The mount path of your data volume
+       default: "/datasets/tensorboard"
 tf-jupyter:
   scale: 1
 tf-worker:

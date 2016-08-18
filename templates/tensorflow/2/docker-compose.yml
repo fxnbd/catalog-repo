@@ -44,3 +44,18 @@ tf-ps:
   working_dir: /notebooks
   stdin_open: true
   volume_driver: ${VOLUME_DRIVER}
+tf-tensorboard:
+  ports:
+  - ${TENSORBOARD_PUBLIC_PORT}:6006/tcp
+  labels:
+    io.rancher.container.pull_image: always
+  tty: true
+  hostname: tf-tensorboard
+  image: davidchiu/tensorflow09:gpu-pure
+  privileged: true
+  volumes:
+  - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
+  - ${VOLUME_NAME}:${VOLUME_MOUNT_PATH}
+  working_dir: ${TENSORBOARD_PATH}
+  stdin_open: true
+  volume_driver: convoy-nfs
