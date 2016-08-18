@@ -20,7 +20,7 @@
        type: "string"
        required: true
        description: The volume name to store your datasets
-       default: "tensorflow_volume"
+       default: "tensorflow_volume_gpu"
      - variable: "VOLUME_MOUNT_PATH"
        label: "Volume Mount Path"
        type: "string"
