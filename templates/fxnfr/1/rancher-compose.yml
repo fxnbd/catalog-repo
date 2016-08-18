@@ -1,8 +1,8 @@
 .catalog:
   name: "FOXCONN Face Recognition"
-  version: "v0.1 CPU Only"
+  version: "v0.1 GPU"
   description: "FOXCONN Face Recognition"
-  uuid: fxnfr
+  uuid: fxnfr-gpu
   minimum_rancher_version: v0.51.0
   questions:
     - variable: stream_addr

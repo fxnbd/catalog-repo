@@ -1,0 +1,12 @@
+fxnfr:
+  image: 192.168.128.28:5000/fxnfr-gpu
+  volumes:
+  - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
+  privileged: true
+  environment:
+    STREAM_ADDR: ${stream_addr}
+  ports:
+    - ${web_port}:8000
+    - ${slot_port}:11843
+  labels:
+    io.rancher.container.pull_image: always
