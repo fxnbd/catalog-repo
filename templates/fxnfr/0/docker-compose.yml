@@ -1,5 +1,5 @@
 fxnfr:
-  image: 192.168.128.28:5000/fxnfr
+  image: mattwang201301/fxnfr
   privileged: true
   environment:
     STREAM_ADDR: ${stream_addr}
