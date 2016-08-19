@@ -50,6 +50,10 @@ tf-tensorboard:
   labels:
     io.rancher.container.pull_image: always
   tty: true
+  entrypoint:
+  - /bin/sh
+  - -c
+  - cd ${TENSORBOARD_PATH} && tensorboard --logdir=.
   hostname: tf-tensorboard
   image: davidchiu/tensorflow09:gpu-pure
   privileged: true
