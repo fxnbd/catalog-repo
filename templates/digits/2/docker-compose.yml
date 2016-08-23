@@ -1,4 +1,4 @@
-digits4:
+digits3:
   image: nvidia/digits:3.3
   ports:
     - ${public_port}:34448/tcp
