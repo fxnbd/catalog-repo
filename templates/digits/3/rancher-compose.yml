@@ -1,6 +1,6 @@
 .catalog:
-  name: "DIGITS 3.3 (NVIDIA)"
-  version: DIGITS 3.3 (NVIDIA)
+  name: "DIGITS 3.3 Ubuntu (NVIDIA)"
+  version: DIGITS 3.3 Ubuntu (NVIDIA)
   description: "Deep Learning"
   questions:
      - variable: "public_port"

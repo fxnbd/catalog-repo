@@ -1,5 +1,5 @@
 digits4:
-  image: nvidia/digits:3.3
+  image: nvidia/digits:3.3-ubuntu14.04
   ports:
     - ${public_port}:34448/tcp
   privileged: true
