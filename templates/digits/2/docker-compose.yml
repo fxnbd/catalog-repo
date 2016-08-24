@@ -1,7 +1,7 @@
-digits3:
-  image: nvidia/digits:3.3
+digits4:
+  image: casperc2100/digits:4.0-gpu-nvcaffe0.14
   ports:
-    - ${public_port}:34448/tcp
+    - ${public_port}:5000/tcp
   privileged: true
   labels:
     io.rancher.container.pull_image: always
