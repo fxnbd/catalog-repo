@@ -1,6 +1,6 @@
 .catalog:
-  name: "DIGITS 4.0 (NVIDIA) (nvCaffe 0.14)"
-  version: DIGITS 4.0 (NVIDIA) (nvCaffe 0.14)
+  name: "DIGITS 4.0 (NVIDIA)"
+  version: DIGITS 4.0 (NVIDIA)
   description: "Deep Learning"
   questions:
      - variable: "public_port"

@@ -1,5 +1,5 @@
 digits4:
-  image: casperc2100/digits:4.0-nvidia-0.14
+  image: nvidia/digits:4.0
   ports:
     - ${public_port}:34448/tcp
   privileged: true
