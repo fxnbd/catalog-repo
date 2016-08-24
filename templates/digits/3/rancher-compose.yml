@@ -1,6 +1,6 @@
 .catalog:
-  name: "DIGITS 3.3 Ubuntu (NVIDIA)"
-  version: DIGITS 3.3 Ubuntu (NVIDIA)
+  name: "DIGITS 4.0 (NVIDIA)"
+  version: DIGITS 4.0 (NVIDIA)
   description: "Deep Learning"
   questions:
      - variable: "public_port"
@@ -8,7 +8,7 @@
        type: "int"
        required: true
        description: Public port to access the web site
-       default: 34428
+       default: 34438
      - variable: "VOLUME_DRIVER"
        label: "Volume driver"
        type: "string"
