@@ -1,0 +1,34 @@
+.catalog:
+  name: "FOXCONN Face Recognition"
+  version: "latest GPU"
+  description: "FOXCONN Face Recognition"
+  uuid: fxnfr-gpu
+  minimum_rancher_version: v0.51.0
+  questions:
+    - variable: stream_addr
+      description: "stream source url for face recognition"
+      label: "Stream Source Address"
+      required: true
+      type: string
+    - variable: web_port
+      description: "public port to access the fxnfr web site"
+      label: "Web Public Port"
+      required: true
+      default: "8000"
+      type: "int"
+    - variable: slot_port
+      description: "public slot port to access the fxnfr web site"
+      label: "Web Slot Public Port"
+      required: true
+      default: "11843"
+      type: "int"
+  
+fxnfr:
+  health_check:
+      initializing_timeout: 120000
+      port: 8000
+      interval: 5000
+      unhealthy_threshold: 2
+      strategy: recreate
+      response_timeout: 5000
+      healthy_threshold: 1

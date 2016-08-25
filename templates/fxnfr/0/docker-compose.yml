@@ -1,5 +1,5 @@
 fxnfr:
-  image: mattwang201301/fxnfr
+  image: mattwang201301/fxnfr:0.1
   privileged: true
   environment:
     STREAM_ADDR: ${stream_addr}
