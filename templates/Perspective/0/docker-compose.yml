@@ -1,0 +1,88 @@
+amb-db:
+  environment:
+    POSTGRES_PASSWORD: bigdata
+    POSTGRES_USER: ambari
+  labels:
+    io.rancher.container.pull_image: always
+  hostname: amb-db
+  image: kashin08/fxn-postgres
+  volumes:
+  - /data/ambari-server/pgsql/data:/var/lib/postgresql/data
+amb-agent:
+  labels:
+    io.rancher.container.pull_image: always
+    io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
+  command:
+  - systemd.setenv=CLOUD_PLATFORM=RANCHER
+  image: kashin08/ambari-agent:latest
+  privileged: true
+  volumes:
+  - /hadoop:/hadoop
+  dns_search:
+  - service.consul
+  - node.dc1.consul
+  dns:
+  - ${consul_dns_ip}
+amb-server:
+  ports:
+  - 8080:8080/tcp
+  labels:
+    io.rancher.container.pull_image: always
+  command:
+  - systemd.setenv=CLOUD_PLATFORM=RANCHER
+  - systemd.setenv=POSTGRES_DB=amb-db
+  image: kashin08/ambari-server:latest
+  privileged: true
+  links:
+  - amb-db:amb-db
+  dns_search:
+  - service.consul
+  - node.dc1.consul
+  dns:
+  - ${consul_dns_ip}
+provision:
+  labels:
+    io.rancher.container.pull_image: always
+    io.rancher.container.start_once: 'true'
+  links:
+  - amb-server:ambariserver
+  environment:
+    EXPECTED_HOST_COUNT: ${node_count}
+    BLUEPRINT: ${blueprint}
+  entrypoint:
+  - /bin/bash
+  image: kashin08/ambari-server:latest
+  tty: true
+  stdin_open: true
+  dns_search:
+  - service.consul
+  - node.dc1.consul
+  dns:
+  - ${consul_dns_ip}
+hue:
+  ports:
+  - 8888:8888/tcp
+  labels:
+    io.rancher.container.pull_image: always
+  image: kashin08/persp-hue
+  tty: true
+  stdin_open: true
+  dns_search:
+  - service.consul
+  - node.dc1.consul
+  dns:
+  - ${consul_dns_ip}
+proxy:
+  ports:
+  - 8443:8443/tcp
+  - 10000:10000/tcp
+  labels:
+    io.rancher.container.pull_image: always
+  image: kashin08/persp-proxy
+  tty: true
+  stdin_open: true
+  dns_search:
+  - service.consul
+  - node.dc1.consul
+  dns:
+  - ${consul_dns_ip}

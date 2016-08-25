@@ -1,0 +1,43 @@
+.catalog:
+  name: "Perspective"
+  version: 1.0-rancher1
+  description: |
+    Foxconn Perspective cluster
+  minimum_rancher_version: v0.56.0
+  uuid: persp-1
+  questions:
+    - variable: "node_count"
+      description: "Number of cluster nodes"
+      label: "Node Count:"
+      required: true
+      default: 2
+      type: int
+    - variable: "blueprint"
+      label: "Blueprint"
+      description: "Choose one blueprint"
+      default: multi-node-persp
+      type: enum   
+      options:
+        - multi-node-persp
+        - single-node-hdfs-yarn
+    - variable: "consul_dns_ip"
+      label: "Consul DNS IP"
+      description: "The IP of Consul DNS container"
+      type: string
+amb-db:
+  scale: 1
+  retain_ip: true
+amb-agent:
+  scale: ${node_count}
+  retain_ip: true
+amb-server:
+  scale: 1
+  retain_ip: true
+provision:
+  scale: 1
+hue:
+  scale: 1
+  retain_ip: true
+proxy:
+  scale: 1
+  retain_ip: true
