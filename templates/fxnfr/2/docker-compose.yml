@@ -1,5 +1,5 @@
 fxnfr:
-  image: mattwang201301/fxnfr-gpu
+  image: mattwang201301/fxnfr-gpu:GoogleNet
   volumes:
   - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
   privileged: true
