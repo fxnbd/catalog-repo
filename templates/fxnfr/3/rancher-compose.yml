@@ -1,6 +1,6 @@
 .catalog:
   name: "FOXCONN Face Recognition"
-  version: "latest GPU GoogleNet"
+  version: "latest GPU AlexNet"
   description: "FOXCONN Face Recognition"
   uuid: fxnfr-gpu
   minimum_rancher_version: v0.51.0
