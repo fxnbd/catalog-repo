@@ -1,0 +1,35 @@
+fxndl:
+  image: 192.168.128.28:5000/fxndl_4_0
+  links:
+    - db:mysql
+    - jar:caffeonspark
+  privileged: true
+  ports:
+    - ${digits_port}:5000
+  environment:
+    SPARK_HOST: ${spark_host}
+    SPARK_SSH_PORT: ${ssh_port}
+    SPARK_USER: ${spark_account}
+    SPARK_PASSWORD: ${spark_password}
+  labels:
+    # io.rancher.container.pull_image: always
+    io.rancher.container.create_agent: true
+    io.rancher.container.agent.role: environment
+  volume_driver: ${volume_driver}
+  volumes:
+    - ${volume_name}_digits:/opt/DIGITS/volume
+
+jar:
+  image: markyeh/caffe-spark
+  privileged: true
+
+db:
+  image: mariadb
+  privileged: true
+  environment:
+    MYSQL_ROOT_PASSWORD: fxndl
+    MYSQL_USER: digits
+    MYSQL_PASSWORD: digits
+  volume_driver: ${volume_driver}
+  volumes:
+    - ${volume_name}_db:/var/lib/mysql
