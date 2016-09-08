@@ -1,0 +1,6 @@
+name: Portus-convory
+description: |
+  Authorization service and user interface for the Docker Registry version 2.1
+version: v2.0.5
+category: Applications
+

@@ -1,0 +1,72 @@
+.catalog:
+  name: "Portus"
+  version: "v2.0.5"
+  description: "Portus"
+  uuid: portus-2.0.5
+  questions: 
+    - variable: "HOST_LABEL"
+      label: "Host label"
+      description: "Host label where to run Registry service"
+      required: true
+      type: "string"
+      default: "registry_host=true"
+    - variable: "DOMAIN"
+      label: "FQDN"
+      description: "FQDN of server. This should be the CN in the certificates and will be the URL to contact the Registry and Web interface"
+      required: true
+      type: "string"
+    - variable: "PPORT"
+      label: "Admin Port"
+      description: "Port on which to run the SSL Portus administration service and API"
+      default: 443
+      required: true
+      type: "int"
+    - variable: "RPORT"
+      label: "Registry Port"
+      description: "Port on which to run the registry service"
+      default: 5000
+      required: true
+      type: "int"
+    - variable: "DBPORT"
+      label: "MariaDB Port"
+      description: "Port on which to access MariaDB"
+      default: 3306
+      required: true
+      type: "int"
+    - variable: "DBPASSWORD"
+      label: "DB Password"
+      description: "Password for Portus database access, must be 8 characters or longer"
+      required: true
+      default: password
+      type: "password"
+    - variable: "ROOTPASSWORD"
+      label: "DB Root Password"
+      description: "Root Password for MySQL database, must be 8 characters or longer.  This is not normally used."
+      required: true
+      default: password
+      type: "password"
+    - variable: "PORTUSPASSWORD"
+      label: "Portus Operate Password"
+      description: "Password for Portus self access, must be 8 characters or longer"
+      required: true
+      default: foxconnbd
+      type: "password"
+    - variable: "DRIVER"
+      label: "Storage Pool"
+      description: "Convoy storage pool name"
+      required: true
+      type: "string"
+      default: "convoy"
+    - variable: "PFX"
+      label: "Convoy volume prefix"
+      description: "Prefix to use for all Convoy storage pool volumes"
+      required: true
+      type: "string"
+      default: "registry"
+
+db:
+  scale: 1
+portus:
+  scale: 1
+registry:
+  scale: 1
