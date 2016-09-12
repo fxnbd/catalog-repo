@@ -10,7 +10,7 @@ spark-on-yarn:
   
 spark-auto-tool:
   environment:
-    RANCHER_UUID: spark-on-yarn-s20v001
+    RANCHER_UUID: spark-on-yarn-s20v000
     FXN_HADOOP_SSH_PORT : ${FXN_HADOOP_SSH_PORT}
     FXN_YARN_NM_CPU_VCORES: ${FXN_YARN_NM_CPU_VCORES}
     FXN_YARN_NM_MEMORY_MB: ${FXN_YARN_NM_MEMORY_MB}

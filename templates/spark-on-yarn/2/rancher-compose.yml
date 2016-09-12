@@ -3,7 +3,7 @@
   version: spark2.0-v0.0.0
   description: |
     Spark cluster including YARN and HDFS.
-  uuid: spark-on-yarn-s20v001
+  uuid: spark-on-yarn-s20v000
   questions:
     - variable: "FXN_HADOOP_SSH_PORT"
       label: "Hadoop default SSH port"
