@@ -1,0 +1,5 @@
+name: FXN-CAR-DETECTION
+description: |
+  Object detection for Car
+version: v0.1
+category: IVA
