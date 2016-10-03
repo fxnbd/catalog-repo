@@ -1,6 +1,6 @@
 .catalog:
   name: "Caffe with CUDA and shellinabox"
-  version: Latest (shellinabox)
+  version: Latest (CUDA + shellinabox)
   description: "Deep Learning"
   questions:
      - variable: "VOLUME_DRIVER"

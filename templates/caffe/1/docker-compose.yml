@@ -1,5 +1,5 @@
 caffe:
-  image: jerrychiu/shellinabox-caffe:latest
+  image: jerrychiu/shellinabox-cuda-caffe:latest
   tty: true
   stdin_open: true
   volumes:
