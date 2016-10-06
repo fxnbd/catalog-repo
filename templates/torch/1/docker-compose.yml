@@ -1,0 +1,15 @@
+torch:
+  image: jerrychiu/shellinabox-cuda-torch:latest
+  tty: true
+  stdin_open: true
+  volumes:
+    - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
+    - ${volume_name}:${volume_mount_path}
+  volume_driver: ${VOLUME_DRIVER}
+  ports:
+    - ${shellinabox_port}:4200
+    - ${jupyter_port}:8888
+  environment:
+    SIAB_USER: ${shellinabox_user}
+    SIAB_PASSWORD: ${shellinabox_password}
+    SIAB_SUDO: true
