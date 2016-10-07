@@ -1,5 +1,5 @@
 .catalog:
-  name: "Torch with CUDA and shellinabox"
+  name: "Torch with shellinabox"
   version: Latest (shellinabox)
   description: "Deep Learning"
   questions:
