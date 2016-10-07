@@ -1,4 +1,4 @@
-caffe:
+keras:
   image: jerrychiu/keras:latest
   tty: true
   stdin_open: true
