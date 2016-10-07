@@ -1,6 +1,6 @@
 .catalog:
-  name: "Caffe with shellinabox"
-  version: Latest (shellinabox)
+  name: "Keras with tensorflow"
+  version: Latest (tensorflow)
   description: "Deep Learning"
   questions:
      - variable: "VOLUME_DRIVER"
@@ -21,21 +21,9 @@
        required: true
        description: The mount path of your data volume
        default: "/datasets"
-     - variable: shellinabox_port
-       description: "public port to access the shellinabox"
-       label: "Shellinabox Public Port"
+     - variable: jupyter_port
+       description: "public port to access the jupyter"
+       label: "Jupyter Public Port"
        required: true
-       default: "4200"
+       default: "8888"
        type: int
-     - variable: "shellinabox_user"
-       label: "User Name"
-       type: string
-       required: true
-       description: The user name for login web console
-       default: "guest"
-     - variable: "shellinabox_password"
-       label: "User Password"
-       type: password
-       required: true
-       description: The user password for login web console
-       default: "guest"

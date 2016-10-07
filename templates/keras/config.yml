@@ -1,5 +1,5 @@
-name: Caffe
+name: Keras
 description: |
   Deep Learning Framework
-version: Latest (shellinabox)
+version: Latest (tensorflow)
 category: Deep Learning

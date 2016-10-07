@@ -1,0 +1,10 @@
+keras:
+  image: jerrychiu/cuda-keras:latest
+  tty: true
+  stdin_open: true
+  volumes:
+    - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
+    - ${volume_name}:${volume_mount_path}
+  volume_driver: ${VOLUME_DRIVER}
+  ports:
+    - ${jupyter_port}:8888
