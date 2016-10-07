@@ -1,0 +1,11 @@
+digits4:
+  image: jerrychiu/digits:4.0-cuda8.0-nvcaffe0.14
+  ports:
+    - ${public_port}:5000/tcp
+  privileged: true
+  labels:
+    io.rancher.container.pull_image: always
+  volumes:
+    - /var/lib/nvidia-docker/volumes/nvidia_driver/367.48:/usr/local/nvidia:ro
+    - ${volume_name}:${volume_mount_path}
+  volume_driver: ${VOLUME_DRIVER}
