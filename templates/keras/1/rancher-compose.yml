@@ -1,5 +1,5 @@
 .catalog:
-  name: "Keras with CUDA and tensorflow"
+  name: "Keras with CUDA and Tensorflow"
   version: Latest (CUDA) (Tensorflow)
   description: "Deep Learning"
   questions:

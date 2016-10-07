@@ -1,6 +1,6 @@
 .catalog:
-  name: "Keras with tensorflow"
-  version: Latest (tensorflow)
+  name: "Keras with Tensorflow"
+  version: Latest (Tensorflow)
   description: "Deep Learning"
   questions:
      - variable: "VOLUME_DRIVER"
