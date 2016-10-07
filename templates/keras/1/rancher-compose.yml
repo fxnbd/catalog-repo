@@ -14,7 +14,7 @@
        type: "string"
        required: true
        description: The volume name to store your datasets
-       default: "caffe_volume"
+       default: "keras_volume"
      - variable: "volume_mount_path"
        label: "Volume Mount Path"
        type: "string"
