@@ -6,4 +6,4 @@ keras:
     - ${volume_name}:${volume_mount_path}
   volume_driver: ${VOLUME_DRIVER}
   ports:
-    - ${jupyter_port}:4200
+    - ${jupyter_port}:8888
