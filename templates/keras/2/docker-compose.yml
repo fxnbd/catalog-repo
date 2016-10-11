@@ -1,0 +1,9 @@
+keras:
+  image: jerrychiu/keras-theano:latest
+  tty: true
+  stdin_open: true
+  volumes:
+    - ${volume_name}:${volume_mount_path}
+  volume_driver: ${VOLUME_DRIVER}
+  ports:
+    - ${jupyter_port}:8888

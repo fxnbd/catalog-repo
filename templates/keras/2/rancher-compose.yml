@@ -1,0 +1,29 @@
+.catalog:
+  name: "Keras with Theano"
+  version: Latest (Theano)
+  description: "Deep Learning"
+  questions:
+     - variable: "VOLUME_DRIVER"
+       label: "Volume driver"
+       type: "string"
+       required: true
+       description: Driver that is providing volume
+       default: "convoy-nfs"
+     - variable: "volume_name"
+       label: "Volume Name"
+       type: "string"
+       required: true
+       description: The volume name to store your datasets
+       default: "keras_volume"
+     - variable: "volume_mount_path"
+       label: "Volume Mount Path"
+       type: "string"
+       required: true
+       description: The mount path of your data volume
+       default: "/datasets"
+     - variable: jupyter_port
+       description: "public port to access the jupyter"
+       label: "Jupyter Public Port"
+       required: true
+       default: "8888"
+       type: int
