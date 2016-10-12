@@ -31,7 +31,6 @@ amb-agent:
   - amb-server:ambserver
   - amb-db:amb-db
   - consul:consul
-  - manager:manager
   dns_search:
   - service.consul
   - node.dc1.consul
