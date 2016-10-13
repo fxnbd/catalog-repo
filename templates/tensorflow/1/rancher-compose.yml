@@ -1,5 +1,5 @@
 .catalog:
-  name: "Tensorflow with CUDA"
+  name: "Tensorflow r0.11 with CUDA"
   version: Latest (GPU)
   description: "Deep Learning"
   questions:
@@ -26,4 +26,4 @@
        type: "string"
        required: true
        description: The mount path of your data volume
-       default: "/datasets"
+       default: "/notebooks/datasets"
