@@ -9,6 +9,8 @@ caffe:
   volume_driver: ${VOLUME_DRIVER}
   ports:
     - ${shellinabox_port}:4200
+  labels:
+    io.rancher.container.pull_image: always
   environment:
     SIAB_USER: ${shellinabox_user}
     SIAB_PASSWORD: ${shellinabox_password}
