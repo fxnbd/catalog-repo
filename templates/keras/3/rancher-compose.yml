@@ -1,6 +1,6 @@
 .catalog:
-  name: "Keras with CUDA and Theano"
-  version: Latest (CUDA) (Theano)
+  name: "Keras with Theano latest (CUDA)"
+  version: Latest (Theano) (CUDA)
   description: "Deep Learning"
   questions:
      - variable: "VOLUME_DRIVER"

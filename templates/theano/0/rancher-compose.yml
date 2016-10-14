@@ -1,6 +1,6 @@
 .catalog:
-  name: "Torch with CUDA"
-  version: Latest (CUDA)
+  name: "Theano latest (CPU only)"
+  version: Latest (CPU only)
   description: "Deep Learning"
   questions:
      - variable: "VOLUME_DRIVER"
@@ -14,19 +14,13 @@
        type: "string"
        required: true
        description: The volume name to store your datasets
-       default: "torch_volume"
+       default: "theano_volume"
      - variable: "volume_mount_path"
        label: "Volume Mount Path"
        type: "string"
        required: true
        description: The mount path of your data volume
        default: "/datasets"
-     - variable: jupyter_port
-       description: "public port to access the jupyter notebook"
-       label: "Juptyer Notebook Public Port"
-       required: true
-       default: "8888"
-       type: int
      - variable: shellinabox_port
        description: "public port to access the shellinabox"
        label: "Shellinabox Public Port"

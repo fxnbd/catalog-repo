@@ -1,5 +1,5 @@
 name: Keras
 description: |
   Deep Learning Platform
-version: Latest (Tensorflow)
+version: Latest (Tensorflow) (CPU only)
 category: Deep Learning

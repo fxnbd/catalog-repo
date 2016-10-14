@@ -1,5 +1,5 @@
-name: Caffe
+name: Theano
 description: |
-  Deep Learning Platform
+  Deep Learning Framework
 version: Latest (CPU only)
 category: Deep Learning

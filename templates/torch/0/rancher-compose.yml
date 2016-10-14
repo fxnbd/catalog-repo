@@ -1,6 +1,6 @@
 .catalog:
-  name: "Torch with shellinabox"
-  version: Latest (shellinabox)
+  name: "Torch latest (CPU only)"
+  version: Latest (CPU only)
   description: "Deep Learning"
   questions:
      - variable: "VOLUME_DRIVER"
