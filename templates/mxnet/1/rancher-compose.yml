@@ -1,0 +1,41 @@
+.catalog:
+  name: "MxNet with CUDA"
+  version: Latest (CUDA)
+  description: "Deep Learning"
+  questions:
+     - variable: "VOLUME_DRIVER"
+       label: "Volume driver"
+       type: "string"
+       required: true
+       description: Driver that is providing volume
+       default: "convoy-nfs"
+     - variable: "volume_name"
+       label: "Volume Name"
+       type: "string"
+       required: true
+       description: The volume name to store your datasets
+       default: "mxnet_volume"
+     - variable: "volume_mount_path"
+       label: "Volume Mount Path"
+       type: "string"
+       required: true
+       description: The mount path of your data volume
+       default: "/datasets"
+     - variable: shellinabox_port
+       description: "public port to access the shellinabox"
+       label: "Shellinabox Public Port"
+       required: true
+       default: "4200"
+       type: int
+     - variable: "shellinabox_user"
+       label: "User Name"
+       type: string
+       required: true
+       description: The user name for login web console
+       default: "guest"
+     - variable: "shellinabox_password"
+       label: "User Password"
+       type: password
+       required: true
+       description: The user password for login web console
+       default: "guest"
