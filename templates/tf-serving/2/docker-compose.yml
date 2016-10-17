@@ -7,7 +7,7 @@ inference-client:
   entrypoint:
   - /bin/sh
   - -c
-  - cd /inference-client && python app.py --port=9000
+  - cd /inference-client && python app.py --port=5000
   hostname: interence-client
   image: davidchiu/tensorflowr11:im2txt
   links:
