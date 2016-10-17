@@ -1,0 +1,36 @@
+inference-client:
+  ports:
+  - ${PUBLIC_PORT}:5000/tcp
+  labels:
+    io.rancher.container.pull_image: always
+  tty: true
+  entrypoint:
+  - /bin/sh
+  - -c
+  - cd /inference-client && python app.py --port=9000
+  hostname: interence-client
+  image: davidchiu/tensorflowr11:im2txt
+  links:
+  - inference-server:inference-server
+  privileged: true
+  volumes:
+  - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
+  - ${VOLUME_NAME}:${VOLUME_MOUNT_PATH}
+  stdin_open: true
+  volume_driver: ${VOLUME_DRIVER}
+inference-server:
+  labels:
+    io.rancher.container.pull_image: always
+  tty: true
+  entrypoint:
+  - /bin/sh
+  - -c
+  - cd /inference-server && python app.py --port=9000 --host=0.0.0.0
+  hostname: inference-server
+  image: davidchiu/tensorflowr11:im2txt
+  privileged: true
+  volumes:
+  - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
+  - ${VOLUME_NAME}:${VOLUME_MOUNT_PATH}
+  stdin_open: true
+  volume_driver: ${VOLUME_DRIVER}
