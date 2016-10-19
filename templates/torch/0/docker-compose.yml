@@ -1,5 +1,5 @@
 torch:
-  image: jerrychiu/shellinabox-torch:latest
+  image: jerrychiu/torch:latest
   tty: true
   stdin_open: true
   volumes:

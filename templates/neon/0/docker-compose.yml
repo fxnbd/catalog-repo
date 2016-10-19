@@ -1,5 +1,5 @@
 neon:
-  image: jerrychiu/shellinabox-neon:latest
+  image: jerrychiu/neon:latest
   tty: true
   stdin_open: true
   volumes:

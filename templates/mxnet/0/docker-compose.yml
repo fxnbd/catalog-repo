@@ -1,5 +1,5 @@
 mxnet:
-  image: jerrychiu/shellinabox-mxnet:latest
+  image: jerrychiu/mxnet:latest
   tty: true
   stdin_open: true
   volumes:

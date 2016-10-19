@@ -1,5 +1,5 @@
 neon:
-  image: jerrychiu/shellinabox-cuda-neon:latest
+  image: jerrychiu/cuda-neon:latest
   tty: true
   stdin_open: true
   privileged: true

@@ -1,5 +1,5 @@
 theano:
-  image: jerrychiu/shellinabox-theano:latest
+  image: jerrychiu/theano:latest
   tty: true
   stdin_open: true
   volumes:

@@ -1,5 +1,5 @@
 mxnet:
-  image: jerrychiu/shellinabox-cuda-mxnet:latest
+  image: jerrychiu/cuda-mxnet:latest
   tty: true
   stdin_open: true
   privileged: true

@@ -1,5 +1,5 @@
 theano:
-  image: jerrychiu/shellinabox-cuda-theano:latest
+  image: jerrychiu/cuda-theano:latest
   tty: true
   stdin_open: true
   privileged: true
