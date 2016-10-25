@@ -1,0 +1,22 @@
+.catalog:
+  name: "DIGITS 4.0 (CPU only no NFS)"
+  version: DIGITS 4.0 (CPU only no NFS)
+  description: "Deep Learning"
+  questions:
+     - variable: "public_port"
+       label: "Public Port"
+       type: "int"
+       required: true
+       description: Public port to access the web site
+       default: 34458
+
+digitscpu4:
+  health_check:
+      initializing_timeout: 120000
+      port: 5000
+      interval: 5000
+      unhealthy_threshold: 2
+      strategy: recreate
+      response_timeout: 5000
+      healthy_threshold: 1
+      
