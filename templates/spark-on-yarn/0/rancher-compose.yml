@@ -1,6 +1,6 @@
 .catalog:
   name: Spark on YARN
-  version: v0.0.0
+  version: spark1.6.1-v0.0.0
   description: |
     Spark cluster including YARN and HDFS.
   uuid: spark-on-yarn-v000
@@ -48,4 +48,4 @@
       default: "3"
       required: true
 spark-on-yarn:
-  scale: 1 
+  scale: 1

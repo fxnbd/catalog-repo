@@ -1,6 +1,5 @@
 name: FXN-Spark on YARN
 description: |
   FOXCONN Spark cluster including YARN and HDFS.
-  v0.0.0: Hadoop 2.7.2 + Spark 1.6.1.
 version: Spark on YARN V0.0.0
 category: Deep Learning
