@@ -1,5 +1,5 @@
 digits4:
-  image: casperc2100/digits:4.0-gpu-nvcaffe0.14
+  image: jerrychiu/digits:4.0-gpu-nvcaffe0.14
   ports:
     - ${public_port}:5000/tcp
   privileged: true
