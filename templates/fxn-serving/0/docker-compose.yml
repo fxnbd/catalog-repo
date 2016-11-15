@@ -1,6 +1,6 @@
 dd-app:
   ports:
-  - ${PUBLIC_PORT}:8888/tcp
+  - ${PUBLIC_PORT}:8080/tcp
   labels:
     io.rancher.container.pull_image: always
   image: markyeh/dd-app:v0.0.0-2016.1108
