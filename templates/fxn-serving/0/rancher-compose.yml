@@ -1,0 +1,33 @@
+.catalog:
+  name: FXN Serving
+  version: FXN-Serving-v0.0.0
+  description: |
+    Creating your deep learning service by trained model.
+  uuid: dd-app-v00020161108
+  questions:
+     - variable: "PUBLIC_PORT"
+       label: "Deep learning server port"
+       description: "Public port to access server"
+       type: "int"
+       default: "30000"
+       required: true
+     - variable: "VOLUME_DRIVER"
+       label: "Volume driver"
+       type: "string"
+       required: true
+       description: Driver that is providing volume
+       default: "convoy-nfs"
+     - variable: "VOLUME_NAME"
+       label: "Volume Name"
+       type: "string"
+       required: true
+       description: The volume name to store your datasets
+       default: "fxn-serving_volume"
+     - variable: "VOLUME_MOUNT_PATH"
+       label: "Volume Mount Path"
+       type: "string"
+       required: true
+       description: The mount path of your data volume
+       default: "/datasets"
+dd-app:
+  scale: 1

@@ -1,0 +1,12 @@
+dd-app:
+  ports:
+  - ${PUBLIC_PORT}:8888/tcp
+  labels:
+    io.rancher.container.pull_image: always
+  image: markyeh/dd-app:v0.0.0-2016.1108
+  volumes:
+  - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
+  - ${VOLUME_NAME}:${VOLUME_MOUNT_PATH}
+  volume_driver: ${VOLUME_DRIVER}
+  privileged: true
+
