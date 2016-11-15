@@ -8,7 +8,7 @@ tf-jupyter:
   - /bin/sh
   - -c
   - jupyter notebook --port=8888 --ip=0.0.0.0
-  image: davidchiu/tensorflowr11:gpu-jupyter
+  image: davidchiu/tensorflow_v011:gpu-jupyter
   hostname: tf_jupyter
   privileged: true
   volumes:
@@ -23,7 +23,7 @@ tf-worker:
     io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
   tty: true
   hostname: tf_worker
-  image: davidchiu/tensorflowr11:gpu-ssh
+  image: davidchiu/tensorflow_v011:gpu-ssh
   privileged: true
   volumes:
   - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
@@ -36,7 +36,7 @@ tf-ps:
     io.rancher.container.pull_image: always
   tty: true
   hostname: tf_ps
-  image: davidchiu/tensorflowr11:gpu-ssh
+  image: davidchiu/tensorflow_v011:gpu-ssh
   privileged: true
   volumes:
   - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
@@ -55,7 +55,7 @@ tf-tensorboard:
   - -c
   - cd ${TENSORBOARD_PATH} && tensorboard --logdir=.
   hostname: tf-tensorboard
-  image: davidchiu/tensorflowr11:gpu-pure
+  image: davidchiu/tensorflow_v011:gpu
   privileged: true
   volumes:
   - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro

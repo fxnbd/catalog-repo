@@ -1,5 +1,5 @@
 .catalog:
-  name: "Tensorflow latest (GPU Distributed)"
+  name: "Tensorflow v0.11 (GPU Distributed)"
   version: Latest (Distributed)
   description: "Deep Learning"
   questions:

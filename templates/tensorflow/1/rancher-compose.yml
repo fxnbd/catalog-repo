@@ -1,5 +1,5 @@
 .catalog:
-  name: "Tensorflow r0.11 with CUDA"
+  name: "Tensorflow v0.11 with CUDA"
   version: Latest (GPU)
   description: "Deep Learning"
   questions:
