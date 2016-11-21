@@ -5,31 +5,37 @@
     Creating your deep learning service by trained model.
   uuid: dd-app-v00020161108
   questions:
-     - variable: "PUBLIC_PORT"
+     - variable: "FXN_PUBLIC_PORT"
        label: "Deep learning server port"
        description: "Public port to access server"
        type: "int"
        default: "30000"
        required: true
-     - variable: "VOLUME_DRIVER"
+     - variable: "FXN_PROXY_PORT"
+       label: "CORS proxy port"
+       description: "Proxy port to access server"
+       type: "int"
+       default: "30001"
+       required: true
+     - variable: "FXN_VOLUME_DRIVER"
        label: "Volume driver"
        type: "string"
        required: true
        description: Driver that is providing volume
        default: "convoy-nfs"
-     - variable: "VOLUME_NAME"
+     - variable: "FXN_VOLUME_NAME"
        label: "Volume Name"
        type: "string"
        required: true
        description: The volume name to store your datasets
        default: "fxn-serving_volume"
-     - variable: "VOLUME_MOUNT_PATH"
+     - variable: "FXN_VOLUME_MOUNT_PATH"
        label: "Volume Mount Path"
        type: "string"
        required: true
        description: The mount path of your data volume
        default: "/datasets"
-     - variable: "MODEL_PATH"
+     - variable: "FXN_MODEL_PATH"
        label: "Model Path"
        type: "string"
        required: true

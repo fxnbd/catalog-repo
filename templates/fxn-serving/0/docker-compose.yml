@@ -1,12 +1,15 @@
 dd-app:
+  environment:
+    FXN_MODEL_PATH : ${FXN_MODEL_PATH}
   ports:
-  - ${PUBLIC_PORT}:8080/tcp
+  - ${FXN_PUBLIC_PORT}:8080/tcp
+  - ${FXN_PROXY_PORT}:1337/tcp
   labels:
     io.rancher.container.pull_image: always
   image: markyeh/dd-app:v0.0.2-2016.1114
   volumes:
   - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
-  - ${VOLUME_NAME}:${VOLUME_MOUNT_PATH}
-  volume_driver: ${VOLUME_DRIVER}
+  - ${FXN_VOLUME_NAME}:${FXN_VOLUME_MOUNT_PATH}
+  volume_driver: ${FXN_VOLUME_DRIVER}
   privileged: true
 
