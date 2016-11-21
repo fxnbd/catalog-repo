@@ -29,5 +29,11 @@
        required: true
        description: The mount path of your data volume
        default: "/datasets"
+     - variable: "MODEL_PATH"
+       label: "Model Path"
+       type: "string"
+       required: true
+       description: Your model path
+       default: "/datasets/models/imagenet_example"
 dd-app:
   scale: 1
