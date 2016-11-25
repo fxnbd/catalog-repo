@@ -1,0 +1,13 @@
+fxndetect:
+  image: jerrychiu/car_detect-gpu:0.2
+  volumes:
+  - ${gpu_driver}:/usr/local/nvidia:ro
+  privileged: true
+  environment:
+    GPU_NUM: ${gpu_num}
+    INPUT_URL: ${input_url}
+  ports:
+    - ${web_port}:5000
+    - ${slot_port}:34448
+  labels:
+    io.rancher.container.pull_image: always

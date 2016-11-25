@@ -1,0 +1,47 @@
+.catalog:
+  name: "FOXCONN Car Detection"
+  version: "GPU v0.2"
+  description: "FOXCONN Car Detection"
+  uuid: fxncd-gpu
+  minimum_rancher_version: v0.51.0
+  questions:
+    - variable: input_url
+      description: "stream source url for face recognition"
+      label: "Stream Source Address"
+      required: true
+      default: "/input/sample/sample.mp4"
+      type: string
+    - variable: gpu_num
+      description: "maximum count of gpu for car detection"
+      label: "GPU MAXIMUM COUNT"
+      required: true
+      default: "1"
+      type: "int"
+    - variable: gpu_driver
+      description: "path of gpu driver"
+      label: "GPU Driver Path"
+      required: true
+      default: "/var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18"
+      type: string
+    - variable: web_port
+      description: "public port to access the fxnfr web site"
+      label: "Web Public Port"
+      required: true
+      default: "5000"
+      type: "int"
+    - variable: slot_port
+      description: "public slot port to access the fxnfr web site"
+      label: "Web Slot Public Port"
+      required: true
+      default: "34448"
+      type: "int"
+  
+fxndetect:
+  health_check:
+      initializing_timeout: 120000
+      port: 5000
+      interval: 5000
+      unhealthy_threshold: 2
+      strategy: recreate
+      response_timeout: 5000
+      healthy_threshold: 1
