@@ -1,0 +1,11 @@
+.catalog:
+  name: "Tensorflow v0.11 with CUDA"
+  version: Latest (GPU no NFS)
+  description: "Deep Learning"
+  questions:
+     - variable: "PUBLIC_PORT"
+       label: "Public Port"
+       type: "int"
+       required: true
+       description: Public port to access the web site
+       default: 32448
