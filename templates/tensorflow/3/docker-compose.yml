@@ -8,7 +8,7 @@ tensorflow:
   - /bin/sh
   - -c
   - jupyter notebook --port=8888 --ip=0.0.0.0
-  image: davidchiu/tensorflow09:cpu-jupyter
+  image: davidchiu/tensorflow_v011:cpu-jupyter
   privileged: true
   working_dir: /notebooks
   stdin_open: true
