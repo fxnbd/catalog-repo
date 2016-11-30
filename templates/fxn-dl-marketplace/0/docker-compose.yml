@@ -12,4 +12,8 @@ dd-app:
   - ${FXN_VOLUME_NAME}:${FXN_VOLUME_MOUNT_PATH}
   volume_driver: ${FXN_VOLUME_DRIVER}
   privileged: true
+  entrypoint:
+  - /bin/sh
+  - -c
+  - supervisord -c /etc/supervisor/supervisord.conf
 
