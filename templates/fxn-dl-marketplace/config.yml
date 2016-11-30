@@ -1,5 +1,5 @@
-name: FXN-Serving
+name: FXN-DL-Marketplace
 description: |
   Creating your deep learning service by trained model.
-version: FXN-Serving v0.0.0
+version: FXN-DL-Marketplace v0.0.0
 category: Deep Learning

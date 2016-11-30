@@ -6,7 +6,7 @@ dd-app:
   - ${FXN_PROXY_PORT}:1337/tcp
   labels:
     io.rancher.container.pull_image: always
-  image: markyeh/dd-app:v0.0.2-2016.1114
+  image: markyeh/dd-app:v0.0.3-2016.1114
   volumes:
   - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
   - ${FXN_VOLUME_NAME}:${FXN_VOLUME_MOUNT_PATH}
