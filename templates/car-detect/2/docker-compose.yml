@@ -1,0 +1,10 @@
+fxndetect:
+  image: jerrychiu/car_detect-cpu:0.2
+  privileged: true
+  environment:
+    INPUT_URL: ${input_url}
+  ports:
+    - ${web_port}:5000
+    - ${slot_port}:34448
+  labels:
+    io.rancher.container.pull_image: always
