@@ -2,6 +2,7 @@ fxndetect:
   image: jerrychiu/car_detect-cpu:0.2
   privileged: true
   environment:
+    GPU_NUM: 0
     INPUT_URL: ${input_url}
   ports:
     - ${web_port}:5000
