@@ -4,25 +4,39 @@ amb-db:
     POSTGRES_USER: ambari
   labels:
     io.rancher.container.pull_image: always
-  hostname: amb-db
-  image: kashin08/fxn-postgres
+  image: 10.32.76.253:5000/cloud/ambari-db
   volumes:
-  - /data/ambari-server/pgsql/data:/var/lib/postgresql/data
+  - /mnt/volume/data/ambari-server/pgsql/data:/var/lib/postgresql/data
+consul:
+  domainname: service.consul
+  labels:
+    io.rancher.container.pull_image: always
+    io.rancher.container.requested_ip: 10.42.2.24
+  command:
+  - -server
+  - -bootstrap
+  hostname: consul
+  image: sequenceiq/consul:v0.5.0-v6
 amb-agent:
   labels:
     io.rancher.container.pull_image: always
     io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
   command:
   - systemd.setenv=CLOUD_PLATFORM=RANCHER
-  image: kashin08/ambari-agent:latest
+  image: 10.32.76.253:5000/cloud/ambari-agent
   privileged: true
   volumes:
-  - /hadoop:/hadoop
+  - /mnt/volume/hadoop:/hadoop
+  links:
+  - amb-server:amb-server
+  - amb-db:amb-db
+  - consul:consul
+  - manager:manager
   dns_search:
   - service.consul
   - node.dc1.consul
   dns:
-  - ${consul_dns_ip}
+  - 10.42.2.24
 amb-server:
   ports:
   - 8080:8080/tcp
@@ -31,15 +45,16 @@ amb-server:
   command:
   - systemd.setenv=CLOUD_PLATFORM=RANCHER
   - systemd.setenv=POSTGRES_DB=amb-db
-  image: kashin08/ambari-server:latest
+  image: 10.32.76.253:5000/cloud/ambari-server
   privileged: true
   links:
   - amb-db:amb-db
+  - consul:consul
   dns_search:
   - service.consul
   - node.dc1.consul
   dns:
-  - ${consul_dns_ip}
+  - 10.42.2.24
 provision:
   labels:
     io.rancher.container.pull_image: always
@@ -48,41 +63,87 @@ provision:
   - amb-server:ambariserver
   environment:
     EXPECTED_HOST_COUNT: ${node_count}
-    BLUEPRINT: ${blueprint}
+    HDP_BASE_URL: http://192.168.141.122/HDP/centos7/2.x/updates/2.4.0.0
+    HDP_REPO_URI: api/v1/stacks/HDP/versions/2.4/operating_systems/redhat7/repositories/HDP-2.4
+    HDP_UTILS_BASE_URL: http://192.168.141.122/HDP-UTILS-1.1.0.20/repos/centos7
+    HDP_UTILS_REPO_URI: api/v1/stacks/HDP/versions/2.4/operating_systems/redhat7/repositories/HDP-UTILS-1.1.0.20
+    BLUEPRINT: multi-node-persp
+    #BLUEPRINT: ${blueprint}
   entrypoint:
   - /bin/bash
-  image: kashin08/ambari-server:latest
+  - -c
+  - /tmp/install-cluster.sh
+  image: 10.32.76.253:5000/cloud/ambari-server
   tty: true
   stdin_open: true
   dns_search:
   - service.consul
   - node.dc1.consul
   dns:
-  - ${consul_dns_ip}
+  - 10.42.2.24
+kerberos:
+  labels:
+    io.rancher.container.pull_image: always
+  image: 10.32.76.253:5000/sean/persp-kerberos
+  links:
+  - amb-db:amb-db
+  - consul:consul
+  tty: true
+  stdin_open: true
+  dns_search:
+  - service.consul
+  - node.dc1.consul
+  dns:
+  - 10.42.2.24
+manager:
+  ports:
+  - 80:80/tcp
+  labels:
+    io.rancher.container.pull_image: always
+  image: 10.32.76.253:5000/sean/persp-manager
+  links:
+  - amb-db:amb-db
+  - consul:consul
+  tty: true
+  stdin_open: true
+  dns_search:
+  - service.consul
+  - node.dc1.consul
+  dns:
+  - 10.42.2.24
 hue:
   ports:
   - 8888:8888/tcp
   labels:
     io.rancher.container.pull_image: always
-  image: kashin08/persp-hue
+  image: 10.32.76.253:5000/sean/persp-hue
+  privileged: true
+  links:
+  - amb-db:amb-db
+  - consul:consul
+  - manager:manager
   tty: true
   stdin_open: true
   dns_search:
   - service.consul
   - node.dc1.consul
   dns:
-  - ${consul_dns_ip}
+  - 10.42.2.24
 proxy:
   ports:
   - 8443:8443/tcp
   - 10000:10000/tcp
+  - 88:88/tcp
   labels:
     io.rancher.container.pull_image: always
-  image: kashin08/persp-proxy
+  image: 10.32.76.253:5000/sean/persp-proxy
+  links:
+  - consul:consul
+  - manager:manager
   tty: true
   stdin_open: true
   dns_search:
   - service.consul
   - node.dc1.consul
   dns:
-  - ${consul_dns_ip}
+  - 10.42.2.24

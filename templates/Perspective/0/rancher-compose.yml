@@ -12,19 +12,22 @@
       required: true
       default: 2
       type: int
-    - variable: "blueprint"
-      label: "Blueprint"
-      description: "Choose one blueprint"
-      default: multi-node-persp
-      type: enum   
-      options:
-        - multi-node-persp
-        - single-node-hdfs-yarn
-    - variable: "consul_dns_ip"
-      label: "Consul DNS IP"
-      description: "The IP of Consul DNS container"
-      type: string
+#    - variable: "blueprint"
+#      label: "Blueprint"
+#      description: "Choose one blueprint"
+#      default: multi-node-persp
+#      type: enum   
+#      options:
+#        - multi-node-persp
+#        - single-node-hdfs-yarn
+#    - variable: "consul_dns_ip"
+#      label: "Consul DNS IP"
+#      description: "The IP of Consul DNS container"
+#      type: string
 amb-db:
+  scale: 1
+  retain_ip: true
+consul:
   scale: 1
   retain_ip: true
 amb-agent:
@@ -35,6 +38,12 @@ amb-server:
   retain_ip: true
 provision:
   scale: 1
+kerberos:
+  scale: 1
+  retain_ip: true
+manager:
+  scale: 1
+  retain_ip: true
 hue:
   scale: 1
   retain_ip: true
