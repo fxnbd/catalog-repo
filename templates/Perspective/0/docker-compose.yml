@@ -4,7 +4,7 @@ amb-db:
     POSTGRES_USER: ambari
   labels:
     io.rancher.container.pull_image: always
-  image: 10.32.76.253:5000/cloud/ambari-db
+  image: 172.18.111.25:5000/sean/ambari-db
   volumes:
   - /mnt/volume/data/ambari-server/pgsql/data:/var/lib/postgresql/data
 consul:
@@ -23,7 +23,7 @@ amb-agent:
     io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
   command:
   - systemd.setenv=CLOUD_PLATFORM=RANCHER
-  image: 10.32.76.253:5000/cloud/ambari-agent
+  image: 172.18.111.25:5000/sean/ambari-agent
   privileged: true
   volumes:
   - /mnt/volume/hadoop:/hadoop
@@ -45,7 +45,7 @@ amb-server:
   command:
   - systemd.setenv=CLOUD_PLATFORM=RANCHER
   - systemd.setenv=POSTGRES_DB=amb-db
-  image: 10.32.76.253:5000/cloud/ambari-server
+  image: 172.18.111.25:5000/sean/ambari-server
   privileged: true
   links:
   - amb-db:amb-db
@@ -63,9 +63,9 @@ provision:
   - amb-server:ambariserver
   environment:
     EXPECTED_HOST_COUNT: ${node_count}
-    HDP_BASE_URL: http://192.168.141.122/HDP/centos7/2.x/updates/2.4.0.0
+    HDP_BASE_URL: http://172.18.111.24/HDP/centos7/2.x/updates/2.4.0.0
     HDP_REPO_URI: api/v1/stacks/HDP/versions/2.4/operating_systems/redhat7/repositories/HDP-2.4
-    HDP_UTILS_BASE_URL: http://192.168.141.122/HDP-UTILS-1.1.0.20/repos/centos7
+    HDP_UTILS_BASE_URL: http://172.18.111.24/HDP-UTILS-1.1.0.20/repos/centos7
     HDP_UTILS_REPO_URI: api/v1/stacks/HDP/versions/2.4/operating_systems/redhat7/repositories/HDP-UTILS-1.1.0.20
     BLUEPRINT: multi-node-persp
     #BLUEPRINT: ${blueprint}
@@ -73,7 +73,7 @@ provision:
   - /bin/bash
   - -c
   - /tmp/install-cluster.sh
-  image: 10.32.76.253:5000/cloud/ambari-server
+  image: 172.18.111.25:5000/sean/ambari-server
   tty: true
   stdin_open: true
   dns_search:
@@ -84,7 +84,7 @@ provision:
 kerberos:
   labels:
     io.rancher.container.pull_image: always
-  image: 10.32.76.253:5000/sean/persp-kerberos
+  image: 172.18.111.25:5000/sean/persp-kerberos
   links:
   - amb-db:amb-db
   - consul:consul
@@ -100,7 +100,7 @@ manager:
   - 80:80/tcp
   labels:
     io.rancher.container.pull_image: always
-  image: 10.32.76.253:5000/sean/persp-manager
+  image: 172.18.111.25:5000/sean/persp-manager
   links:
   - amb-db:amb-db
   - consul:consul
@@ -116,7 +116,7 @@ hue:
   - 8888:8888/tcp
   labels:
     io.rancher.container.pull_image: always
-  image: 10.32.76.253:5000/sean/persp-hue
+  image: 172.18.111.25:5000/sean/persp-hue
   privileged: true
   links:
   - amb-db:amb-db
@@ -136,7 +136,7 @@ proxy:
   - 88:88/tcp
   labels:
     io.rancher.container.pull_image: always
-  image: 10.32.76.253:5000/sean/persp-proxy
+  image: 172.18.111.25:5000/sean/persp-proxy
   links:
   - consul:consul
   - manager:manager
