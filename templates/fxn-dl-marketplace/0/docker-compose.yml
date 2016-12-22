@@ -13,3 +13,15 @@ dd-app:
   - ${FXN_VOLUME_NAME}:${FXN_VOLUME_MOUNT_PATH}
   volume_driver: ${FXN_VOLUME_DRIVER}
   privileged: true
+
+inference-client:
+  image: jerrychiu/inference_client:v0.1
+  ports:
+  - ${WEB_INFERENCE_PORT}:5000/tcp
+  labels:
+    io.rancher.container.pull_image: always
+  links:
+    - dd-app:dd_serving
+  privileged: true
+  environment:
+      SERVING_PORT: ${FXN_PUBLIC_PORT}
