@@ -24,4 +24,4 @@ inference-client:
     - dd-app:dd_serving
   privileged: true
   environment:
-      SERVING_PORT: ${FXN_PUBLIC_PORT}
+      SERVING_PORT: 8080
