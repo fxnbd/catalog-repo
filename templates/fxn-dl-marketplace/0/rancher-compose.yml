@@ -41,5 +41,11 @@
        required: true
        description: Your model path
        default: "/datasets/models/imagenet_example"
+     - variable: "WEB_INFERENCE_PORT"
+       label: "Inference web port"
+       type: "int"
+       required: true
+       description: inference client port
+       default: "12005"
 dd-app:
   scale: 1
