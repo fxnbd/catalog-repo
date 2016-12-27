@@ -1,5 +1,5 @@
 name: FXN-HDP
 description: |
-  Deploy Foxconn customized HDP services via Ambari
-version: 1.0-rancher1
+  Deploy Foxconn HDP services via Ambari
+version: latest
 category: Big Data
