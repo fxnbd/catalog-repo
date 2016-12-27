@@ -47,5 +47,11 @@
        required: true
        description: inference client port
        default: "12005"
+     - variable: "WEB_ADMIN_PORT"
+       label: "DL admin web port"
+       type: "int"
+       required: true
+       description: DL admin web port
+       default: "12006"
 dd-app:
   scale: 1

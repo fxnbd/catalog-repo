@@ -25,3 +25,15 @@ inference-client:
   privileged: true
   environment:
       SERVING_PORT: 8080
+
+dd-admin:
+  image: jerrychiu/dl_admin:v0.1
+  ports:
+  - ${WEB_ADMIN_PORT}:80/tcp
+  labels:
+    io.rancher.container.pull_image: always
+  links:
+    - dd-app:dd_serving
+  privileged: true
+  environment:
+      SERVING_PORT: 1337
