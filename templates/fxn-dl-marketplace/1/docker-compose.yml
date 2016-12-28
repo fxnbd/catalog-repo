@@ -10,6 +10,7 @@ dd-app:
   image: markyeh/dd-app:v0.0.5-2016.1218
   volumes:
   - /var/lib/nvidia-docker/volumes/nvidia_driver/367.48:/usr/local/nvidia:ro
+  - ${FXN_VOLUME_NAME}:${FXN_VOLUME_MOUNT_PATH}
   privileged: true
 
 inference-client:

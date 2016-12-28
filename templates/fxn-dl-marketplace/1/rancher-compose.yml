@@ -17,6 +17,18 @@
        type: "int"
        default: "30001"
        required: true
+     - variable: "FXN_VOLUME_NAME"
+       label: "Volume Name"
+       type: "string"
+       required: true
+       description: The volume name to store your datasets
+       default: "/usr/local/model"
+     - variable: "FXN_VOLUME_MOUNT_PATH"
+       label: "Volume Mount Path"
+       type: "string"
+       required: true
+       description: The mount path of your data volume
+       default: "/datasets"
      - variable: "FXN_MODEL_PATH"
        label: "Model Path"
        type: "string"
