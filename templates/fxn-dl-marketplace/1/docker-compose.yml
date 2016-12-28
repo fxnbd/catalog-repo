@@ -9,7 +9,7 @@ dd-app:
     io.rancher.container.start_once: true
   image: markyeh/dd-app:v0.0.5-2016.1218
   volumes:
-  - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
+  - /var/lib/nvidia-docker/volumes/nvidia_driver/367.48:/usr/local/nvidia:ro
   privileged: true
 
 inference-client:
