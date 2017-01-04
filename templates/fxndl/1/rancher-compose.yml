@@ -1,6 +1,6 @@
 .catalog:
   name: "FOXCONN DEEP LEARNING (DIGITS 4.0)"
-  version: "v0.1"
+  version: "v0.2"
   description: "FOXCONN DEEP LEARNING (DIGITS 4.0)"
   uuid: fxndl-0
   minimum_rancher_version: v0.51.0
