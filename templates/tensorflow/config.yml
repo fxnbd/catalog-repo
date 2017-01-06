@@ -1,5 +1,5 @@
 name: FXN-Tensorflow
 description: |
   Deep Learning Framework
-version: Latest (Distributed)
+version: Tensorflow r0.11 (GPU)
 category: Deep Learning

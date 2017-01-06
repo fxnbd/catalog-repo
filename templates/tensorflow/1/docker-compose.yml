@@ -4,15 +4,8 @@ tensorflow:
   labels:
     io.rancher.container.pull_image: always
   tty: true
-  entrypoint:
-  - /bin/sh
-  - -c
-  - jupyter notebook --port=8888 --ip=0.0.0.0
-  image: davidchiu/tensorflowr11:gpu-jupyter
+  image: davidchiu/tensorflow_r011:gpu-v0.3
   privileged: true
   volumes:
-  - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
-  - ${VOLUME_NAME}:${VOLUME_MOUNT_PATH}
-  working_dir: /notebooks
+  - /var/lib/nvidia-docker/volumes/nvidia_driver/367.48:/usr/local/nvidia:ro
   stdin_open: true
-  volume_driver: ${VOLUME_DRIVER}

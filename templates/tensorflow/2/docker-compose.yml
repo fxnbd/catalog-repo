@@ -1,4 +1,4 @@
-tf-jupyter:
+tensorflow:
   ports:
   - ${PUBLIC_PORT}:8888/tcp
   labels:
@@ -8,58 +8,7 @@ tf-jupyter:
   - /bin/sh
   - -c
   - jupyter notebook --port=8888 --ip=0.0.0.0
-  image: davidchiu/tensorflowr11:gpu-jupyter
-  hostname: tf_jupyter
+  image: 172.18.111.18:6000/deeplearning/tensorflow_v012:gpu-v0.1
   privileged: true
-  volumes:
-  - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
-  - ${VOLUME_NAME}:${VOLUME_MOUNT_PATH}
   working_dir: /notebooks
   stdin_open: true
-  volume_driver: ${VOLUME_DRIVER}
-tf-worker:
-  labels:
-    io.rancher.container.pull_image: always
-    io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
-  tty: true
-  hostname: tf_worker
-  image: davidchiu/tensorflowr11:gpu-ssh
-  privileged: true
-  volumes:
-  - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
-  - ${VOLUME_NAME}:${VOLUME_MOUNT_PATH}
-  working_dir: /notebooks
-  stdin_open: true
-  volume_driver: ${VOLUME_DRIVER}
-tf-ps:
-  labels:
-    io.rancher.container.pull_image: always
-  tty: true
-  hostname: tf_ps
-  image: davidchiu/tensorflowr11:gpu-ssh
-  privileged: true
-  volumes:
-  - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
-  - ${VOLUME_NAME}:${VOLUME_MOUNT_PATH}
-  working_dir: /notebooks
-  stdin_open: true
-  volume_driver: ${VOLUME_DRIVER}
-tf-tensorboard:
-  ports:
-  - ${TENSORBOARD_PUBLIC_PORT}:6006/tcp
-  labels:
-    io.rancher.container.pull_image: always
-  tty: true
-  entrypoint:
-  - /bin/sh
-  - -c
-  - cd ${TENSORBOARD_PATH} && tensorboard --logdir=.
-  hostname: tf-tensorboard
-  image: davidchiu/tensorflowr11:gpu
-  privileged: true
-  volumes:
-  - /var/lib/nvidia-docker/volumes/nvidia_driver/361.45.18:/usr/local/nvidia:ro
-  - ${VOLUME_NAME}:${VOLUME_MOUNT_PATH}
-  working_dir: ${TENSORBOARD_PATH}
-  stdin_open: true
-  volume_driver: convoy-nfs

@@ -1,53 +1,11 @@
 .catalog:
-  name: "Tensorflow v0.11 (GPU Distributed)"
-  version: Latest (Distributed)
+  name: "Tensorflow latest (GPU)"
+  version: Tensorflow v0.12 (GPU)
   description: "Deep Learning"
   questions:
-     - variable: "WORKER_NUM"
-       label: "worker number"
-       type: "int"
-       default: 2
-       required: true
-       description: worker number setting
      - variable: "PUBLIC_PORT"
-       label: "Jupyter Public Port"
+       label: "Public Port"
        type: "int"
-       default: 8888
-       required: false
-       description: jupyter-notebooks public port
-     - variable: "TENSORBOARD_PUBLIC_PORT"
-       label: "Tensorboard Public Port"
-       type: "int"
-       default: 6006
-       required: false
-       description: tensorboard public port
-     - variable: "VOLUME_DRIVER"
-       label: "Volume driver"
-       type: "string"
        required: true
-       description: Driver that is providing volume
-       default: "convoy-nfs"
-     - variable: "VOLUME_NAME"
-       label: "Volume Name"
-       type: "string"
-       required: true
-       description: The volume name to store your datasets
-       default: "tensorflow_volume_gpu"
-     - variable: "VOLUME_MOUNT_PATH"
-       label: "Volume Mount Path"
-       type: "string"
-       required: true
-       description: The mount path of your data volume
-       default: "/datasets"
-     - variable: "TENSORBOARD_PATH"
-       label: "Tensorboard Work Path"
-       type: "string"
-       required: true
-       description: The mount path of your data volume
-       default: "/datasets/tensorboard"
-tf-jupyter:
-  scale: 1
-tf-worker:
-  scale: ${WORKER_NUM}
-tf-ps:
-  scale: 1
+       description: Public port to access the web site
+       default: 32459

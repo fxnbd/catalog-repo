@@ -1,6 +1,6 @@
 .catalog:
-  name: "Tensorflow v0.11 with CUDA"
-  version: Latest (GPU)
+  name: "Tensorflow r0.11 with CUDA"
+  version: Tensorflow r0.11 (GPU)
   description: "Deep Learning"
   questions:
      - variable: "PUBLIC_PORT"
@@ -9,21 +9,3 @@
        required: true
        description: Public port to access the web site
        default: 32448
-     - variable: "VOLUME_DRIVER"
-       label: "Volume driver"
-       type: "string"
-       required: true
-       description: Driver that is providing volume
-       default: "convoy-nfs"
-     - variable: "VOLUME_NAME"
-       label: "Volume Name"
-       type: "string"
-       required: true
-       description: The volume name to store your datasets
-       default: "tensorflow_volume_gpu"
-     - variable: "VOLUME_MOUNT_PATH"
-       label: "Volume Mount Path"
-       type: "string"
-       required: true
-       description: The mount path of your data volume
-       default: "/notebooks/datasets"
